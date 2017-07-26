@@ -1,4 +1,4 @@
-# Demain j'arrête le café, je me met au crabe !
+# Demain j'arrête le café, je me mets au crabe !
 
 Présentation du langage Rust et de son écosystème.
 

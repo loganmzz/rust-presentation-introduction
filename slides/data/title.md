@@ -6,3 +6,4 @@
 ## Disclaimer
 
 * Ceci n'est pas un cours Rust
+* Garder vos questions pour la fin !

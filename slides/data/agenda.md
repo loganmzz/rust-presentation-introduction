@@ -1,19 +1,19 @@
 ## Programme
 
 * Histoire
-    * Genèse du langage
-    * Idées du langage
+    * Genèse du langage (L)
+    * Idées du langage (A)
 * Langage
-    * Premier code
-    * Types
-    * Ownership
-    * Modèle mémoire
-    * Macros procédurales
-    * Autres fonctionnalités
+    * Premier code (A)
+    * Types (L)
+    * Ownership (A)
+    * Modèle mémoire (L)
+    * Macros par l'exemple (L)
+    * Autres fonctionnalités (L)
 * ???
-    * Tests
-    * _Workflow_
-    * Ecosystème
-    * Librairies
-* Demo
+    * Tests (L)
+    * _Workflow_ (A)
+    * Ecosystème (A)
+    * Librairies (L: Rayon / A: Iron,Nom)
+* Demo (L/A)
 * Questions

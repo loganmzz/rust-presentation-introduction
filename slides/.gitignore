@@ -12,3 +12,4 @@
 /css/reveal.css
 /css/theme/*.css
 /js/reveal.min.js
+bower_components/*

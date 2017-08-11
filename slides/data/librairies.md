@@ -20,9 +20,24 @@
 
 ### Librairies - Web
 
-* Iron
+🚀 [Rocket](https://rocket.rs/)
 
 ```rust
+#![feature(plugin)]
+#![plugin(rocket_codegen)]
+
+extern crate rocket;
+
+#[get("/")]
+fn index() -> &'static str {
+    "Hello, world!"
+}
+
+fn main() {
+    rocket::ignite()
+            .mount("/", routes![index])
+            .launch();
+}
 ```
 
 ---
@@ -49,7 +64,7 @@ How we can parse Wavefront .obj file ?
 
 ---
 
-### use nom !
+### use [nom](https://github.com/Geal/nom) !
 
 ```rust
 named!(vertices_geometry<&[u8], Face>, map!(

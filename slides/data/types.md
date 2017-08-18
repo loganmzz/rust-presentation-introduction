@@ -36,7 +36,7 @@ Note:
 
 ## Types
 
-### Traits
+### Traits (`trait`)
 
 * Interfaces à la Java
 * Implémenter par l'auteur du trait ou type cible
@@ -50,3 +50,22 @@ Note:
 * (+ Java) méthodes statiques
 * (+ Java) surcharge d'opérateur
 * `examples-trait.rs`
+
+---
+
+## Types
+
+### Generics
+
+* _Template_ à la C++
+* _static dispatch_*
+* Implémentations générique (`impl<...>`)
+* Contraintes complexes (`where`)
+
+Note:
+* (- Java) pas héritage => pas variance
+* (+ Java) contraintes négatives
+* (+ Java) inférence avancée
+* (+ Java) pas réification => static dispatch
+* (+ Java) plusieurs implémentations
+* (+ Java) types par défaut

@@ -30,7 +30,7 @@ Note:
 * Les variantes sont comme des `struct`
 
 Note:
-`examples-enum.rs`
+`examples-types-enum.rs`
 
 ---
 
@@ -49,7 +49,7 @@ Note:
 * (~ Java) héritage (_composition over inheritance_)
 * (+ Java) méthodes statiques
 * (+ Java) surcharge d'opérateur
-* `examples-trait.rs`
+* `examples-types-trait.rs`
 
 ---
 
@@ -69,3 +69,4 @@ Note:
 * (+ Java) pas réification => static dispatch
 * (+ Java) plusieurs implémentations
 * (+ Java) types par défaut
+* `examples-types-generic.rs`

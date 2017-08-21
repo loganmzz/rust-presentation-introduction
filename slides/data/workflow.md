@@ -36,16 +36,20 @@
 
 ---
 
-## [Crates.io](https://crates.io/)
-![cargo.io](/assets/img/cargo_website_view.png)<!-- .element height="70%" width="70%"-->
+### [Crates.io](https://crates.io/) 
+<video autoplay muted loop>
+    <source data-src="/assets/img/cargo.mp4" type="video/mp4" />
+</video>
 
 ---
 
-## [Docs.rs](https://docs.rs/)
+### [Docs.rs](https://docs.rs/)
 
-Automatically builds crates' documentation released on crates.io
+Automatically builds crates' documentation released on [crates.io](https://crates.io/)
 
-![docs.rs](/assets/img/docs_rs.png)<!-- .element height="80%" width="80%"-->
+<video autoplay muted loop>
+    <source data-src="/assets/img/docs_rs.mp4" type="video/mp4" />
+</video>
 
 ---
 

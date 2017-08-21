@@ -1,7 +1,69 @@
 ## Cargo workflow
+![cargo logo](/assets/img/cargo_logo.png)
 
-* `cargo new`
-* `lib.rs` + `main.rs`
-* `Cargo.toml`
-* `Cargo.lock`
-* extensions
+> Cargo is not just a dependency manager, but Rust’s primary workflow tool.
+
+---
+
+## Cargo goals
+
+1. Conventions for all Rust projects
+
+2. Fetches and builds your project’s dependencies
+
+3. Always get a **repeatable build**
+
+---
+
+## Project layout
+
+```
+├── Cargo.lock
+├── Cargo.toml
+├── benches
+│   └── micros_bench.rs
+│
+├── examples
+│   └── example.rs
+│
+├── src
+│   ├── lib.rs  // --lib
+│   └── main.rs // --bin
+│
+└── tests
+    └── integration-tests.rs
+```
+
+---
+
+## [Crates.io](https://crates.io/)
+![cargo.io](/assets/img/cargo_website_view.png)<!-- .element height="70%" width="70%"-->
+
+---
+
+## [Docs.rs](https://docs.rs/)
+
+Automatically builds crates' documentation released on crates.io
+
+![docs.rs](/assets/img/docs_rs.png)<!-- .element height="80%" width="80%"-->
+
+---
+
+## Repeatable build
+
+> The first time a build succeeds, Cargo emits a `Cargo.lock` file, which contains a manifest of precisely which source code was used in the build. 
+
+---
+
+## Shared Dependencies
+
+Share dependencies between crates if they depend on the same major version
+
+---
+
+## [Cargo extensions](https://github.com/rust-lang/cargo/wiki/Third-party-cargo-subcommands)
+
+Designed to be extensible without having to modify Cargo itself. 
+
+
+`cargo-${command}` present in the user's `$PATH`

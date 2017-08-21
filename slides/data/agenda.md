@@ -14,6 +14,6 @@
     * Tests (L)
     * _Workflow_ (A)
     * Ecosystème (A)
-    * Librairies (L: Rayon / A: Iron,Nom)
+    * Librairies (L: Rayon / A: Rocket,Nom)
 * Demo (L/A)
 * Questions

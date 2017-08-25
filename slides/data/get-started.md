@@ -1,3 +1,7 @@
+## Reliable
+
+---
+
 ## Premier code
 
 * IDE (RLS, racer, rustfmt, ....)

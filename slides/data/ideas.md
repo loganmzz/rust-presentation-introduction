@@ -22,7 +22,7 @@
 
 ## Ideas of the language
 
-> `fast, reliable, productive. Pick three`
+> fast, reliable, productive. Pick three
 
 ---
 

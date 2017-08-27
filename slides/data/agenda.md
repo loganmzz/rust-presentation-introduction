@@ -7,7 +7,7 @@
     * Premier code (A)
     * Types (L)
     * Ownership (A)
-    * Modèle mémoire (L)
+    * Mémoire et parallélisme (L)
     * Macros par l'exemple (L)
     * Autres fonctionnalités (L)
 * ???

@@ -11,9 +11,7 @@ Note:
 
 ---
 
-## Mémoire et parallélisme
-
-### `Drop`
+## `Drop`
 
 * `finalize()` de Java
 * Déallocation manuelle `drop()`
@@ -36,9 +34,7 @@ Note:
 
 ---
 
-## Mémoire et parallélisme
-
-### Tas (`Box`)
+## Tas (`Box`)
 
 * Type récursif
 
@@ -63,9 +59,7 @@ Note:
 
 ---
 
-## Mémoire et parallélisme
-
-### Pointeur partagé (`Arc`)
+## Pointeur partagé (`Arc`)
 
 ```rust
 fn dis_bonjour(personne: Arc<Personne>) {
@@ -98,9 +92,7 @@ Note:
 
 ---
 
-## Mémoire et parallélisme
-
-### Processus léger (`thread`)
+## Processus léger (`thread`)
 
 ```rust
 fn calcul() -> i64 {
@@ -117,9 +109,7 @@ Note:
 
 ---
 
-## Mémoire et parallélisme
-
-### Tranfert (`Send`) et Partage (`Sync`)
+## Tranfert (`Send`) et Partage (`Sync`)
 
 ```rust
 let reference = Arc::new(String::from("A shared string"));
@@ -139,9 +129,7 @@ Note:
 
 ---
 
-## Mémoire et parallélisme
-
-### Échanges de données (`channel`)
+## Échanges de données (`channel`)
 
 * 1 consommateur (`Receiver`)
 * N producteurs (`Sender`)

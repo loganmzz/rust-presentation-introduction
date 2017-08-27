@@ -7,9 +7,7 @@
 
 ---
 
-## Types
-
-### Structures (`struct`)
+## Structures (`struct`)
 
 * _Unit_
 
@@ -22,9 +20,7 @@ Note:
 
 ---
 
-## Types
-
-### Énumérations (`enum`)
+## Énumérations (`enum`)
 
 * Ensemble fini de variantes
 * Les variantes sont comme des `struct`
@@ -34,9 +30,7 @@ Note:
 
 ---
 
-## Types
-
-### Traits (`trait`)
+## Traits (`trait`)
 
 * Interfaces à la Java
 * Implémenter par l'auteur du trait ou type cible
@@ -53,9 +47,7 @@ Note:
 
 ---
 
-## Types
-
-### Generics
+## Generics
 
 * _Template_ à la C++
 * _static dispatch_*

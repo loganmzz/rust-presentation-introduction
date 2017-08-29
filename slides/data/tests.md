@@ -25,14 +25,15 @@ fn worker_thread_index() {
 
 ---
 
-## Writing tests
-* Add `#[test]` attribute
+## Unit tests Recipie
 
-* `assert!` macros provide in std
+1. Place in the `src/*`
 
-* `#[ignore]`, `#[should_panic]`, ...
+2. Add `#[test]` attribute ( and #[ignore], #[should_panic]...)
 
-* Place in the `src/*`
+3. Use `assert!` macros
+
+4. Run `$cargo test`
 
 ---
 

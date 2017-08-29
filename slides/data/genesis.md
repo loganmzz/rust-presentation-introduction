@@ -1,10 +1,10 @@
-## Genèse du langage
+## Genesis
 
 ---
 
 ## Timeline
 
-* 2006 : Graydon Hoare (Mozilla) - projet personnel
+* 2006 : Graydon Hoare (Mozilla) - personal project
 * 2009 : Mozilla - sponsor
 * 2015-05-15 : Rust 1.0
 * 2017-08-31 : Rust 1.20
@@ -15,13 +15,13 @@ Note:
 
 ---
 
-## Canaux de release
+## Release Channels
 
 * nightly
 * beta
 * stable
 
-> n'ayez pas peur du `nightly`
+## [RFC](https://github.com/rust-lang/rfcs)
 
 Note:
 * Modèle inspiré par Google

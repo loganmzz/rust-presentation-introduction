@@ -129,23 +129,49 @@ Note:
 
 ---
 
-## Échanges de données (`channel`)
-
-* 1 consommateur (`Receiver`)
-* N producteurs (`Sender`)
-
+## Channel
 
 ```rust
-fn new_thread(tx: Sender<String>, message: &str) {
-    let message = String::from(message);
-    spawn(move || tx.send(format!("{:?} => {}", current().id(), message)).unwrap());
-}
+fn main() {
 
-let (tx, rx) = channel();
-new_thread(tx.clone(), "Premier");
-new_thread(tx        , "Second");
+	let (tx, rx) = mpsc::channel();
 
-for message in rx {
-    println!("Reçu : {}", message);
+	thread::spawn(move || {
+		let mut scores = vec![2, 4];
+        tx.send(scores);
+	});
+
+	let scores: Vec<i32> = rx.recv().unwrap();
+	println!("{:?}", scores);
 }
+```
+
+![go_die](/assets/img/gopher_ahah.png) <!-- .element style="background:none; border:none; box-shadow:none;" -->
+
+---
+
+## Ownership messaging (safety)
+
+```rust
+fn main() {
+	let (tx, rx) = mpsc::channel();
+
+	thread::spawn(move || {
+		let mut scores = vec![2, 4];
+        tx.send(scores);
+        scores.push(125);
+	});
+
+	let scores: Vec<i32> = rx.recv().unwrap();
+	println!("{:?}", scores);
+}
+```
+
+```rust
+error[E0382]: use of moved value: `scores`
+  --> main.rs:13:3
+12 | 		tx.send(scores);
+   | 		        - value moved here
+13 | 		scores.push(125);
+   | 		^ value used here after move
 ```

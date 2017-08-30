@@ -23,13 +23,15 @@ Series of `rules`, which are `pattern-matching` cases
 
 ## Access AST 
 
-* ident 
-* path 
-* expr
-* ty 
-* pat
-* stmt
-* ...
+* block
+* expr is used for expressions
+* ident is used for variable/function names
+* item
+* pat (pattern)
+* path
+* stmt (statement)
+* tt (token tree)
+* ty (type)
 
 ---
 

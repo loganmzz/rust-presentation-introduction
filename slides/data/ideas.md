@@ -10,13 +10,25 @@
 
 ---
 
-> On en a gros !
+<!-- .slide: data-background="/assets/img/on_en_a_gros.gif" data-background-size="90%"-->
+
+---
+
+## What we want
+
+* Modern language (pattern matching, functional ...)
+
+* Efficient 
+
+* Not manage memory 
+
+* Safe runtime
 
 ---
 
 ## Safety vs control
 
-![llvm_logo](/assets/img/safety_control.png)
+![llvm_logo](/assets/img/rust_position.jpg)
 
 ---
 

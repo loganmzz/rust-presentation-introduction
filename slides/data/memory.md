@@ -147,32 +147,37 @@ for scores in rx {
 }
 ```
 
-![go_die](/assets/img/gopher_ahah.png) <!-- .element style="background:none; border:none; box-shadow:none;" -->
+![go_die](/assets/img/gopher_ahah.png) <!-- .element class="fragment fade-up" style="background:none; border:none; box-shadow:none;" -->
 
 ---
 
 ## Ownership messaging (safety)
 
-```rust
+<pre><code data-trim data-noescape class="rust">
 fn main() {
 	let (tx, rx) = mpsc::channel();
 
 	thread::spawn(move || {
 		let mut scores = vec![2, 4];
         tx.send(scores);
-        scores.push(125);
+        <span class="fragment highlight-mark">scores.push(125);</span>
 	});
 
 	let scores: Vec<i32> = rx.recv().unwrap();
 	println!("{:?}", scores);
 }
-```
+</code></pre>
 
-```
+<pre><code data-trim data-noescape class="rust"> 
 error[E0382]: use of moved value: `scores`
   --> main.rs:13:3
 12 | 		tx.send(scores);
-   | 		        - value moved here
+   | 		        <span class="fragment highlight-mark">- value moved here</span>
 13 | 		scores.push(125);
-   | 		^ value used here after move
-```
+   | 		^ <span class="fragment highlight-mark">value used here after move</span>
+</code></pre>
+<!-- .element class="fragment" -->
+
+---
+
+### Concurrency without data races 

@@ -3,11 +3,15 @@
 
 ---
 
-## Memory model in Java
+<p>Not safety = <span>mutable data</span><!-- .element: class="fragment" --><span> + more one ref on it</span><!-- .element: class="fragment" -->
 
-#### <span style="color:orange">Garbage collector</span>
+---
+
+## Garbage collector
 
 ![cargo logo](/assets/img/gc.png)
+
+<p><span style="color:orange;">Can't prevent to</span>: data races, iterator invalidation,...</p> <!-- .element class="fragment" -->
 
 ---
 
@@ -57,60 +61,47 @@ Segmentation fault
 
 ## Ownership
 
-``` rust
-
+<pre><code data-trim data-noescape class="rust"> 
 fn generate_events() {
-    let events = vec![...];
+    let <span class="fragment highlight-mark">events</span> = vec![...];
     transform_events(events); //take events ownership
 }
 
-fn transform_events(events: Vec<Event>) {
+fn transform_events(<span class="fragment highlight-mark">events</span>: Vec<Event>) {
     // Ownership of events transfered in
     // transform_event scope 
-} 
-
-```
-
----
-
-## Ownership
-
-#### free memory
-
-When <span style="color:red">`events[]`</span> <span style="color:orange">goes out of scope</span> at the end of `transform_events`, 
-
-<p>Rust will <span style="color:orange">reclaim</span> the <span style="color:orange">memory</span> allocated at the <span style="color:orange">end of the scope</span>.</p>
- <!-- .element: class="fragment" -->
+} <span class="fragment" style="color:red;font-size:larger;">◀️ free events memory allocation</span>
+</code></pre> 
 
 ---
 
 ## Ownership
 
-``` rust
-
+<pre><code data-trim data-noescape class="rust"> 
 fn generate_events() {
     let events = vec![...];
 
     transform_events(events);
-    transform_events(events);
+    <span class="fragment highlight-mark">transform_events(events);</span> 
 }
 
 fn transform_events(events: Vec<Event>) {
     //...
 }
+</code></pre> 
 
-```
 
-``` rust
+<pre><code data-trim data-noescape class="rust"> 
 error[E0382]: use of moved value: `events`
  --> src/move_example.rs:4:19
   |
 3 |   transform_events(events);
-  |                   ------ value moved here
+  |                   <span class="fragment highlight-mark">------ value moved here</span>
 4 |   transform_events(events);
-  |                   ^^^^^^ value used here after move
+  |                   <span class="fragment highlight-mark">^^^^^^ value used here after move</span>
   |
-```
+</code></pre> 
+<!-- .element class="fragment" -->
 
 ---
 
@@ -122,20 +113,16 @@ error[E0382]: use of moved value: `events`
 
 ## Ownership
 
-> Ensure <span style="color:red">only one</span> active <span style="color:orange">binding</span> to  
-> <span style="color:orange">allocated memory at a time</span>
+Ensure <span style="color:red">only one</span> active <span style="color:orange">binding</span> to  
+<span style="color:orange">allocated memory at a time</span>
 
->  <span style="color:green">✔️ eliminates data race</span>  <!-- .element: class="fragment" -->
+<p style="color:orange;font-size:larger">✔️ eliminates data race</span>  <!-- .element: class="fragment" -->
 
 ---
 
 ## Borrowing
 
 > What if, we <span style="color:red">borrow</span> the resource instead?
-
----
-
-Not safety = <span>mutable data</span><!-- .element: class="fragment" --><span> + more one ref on it</span><!-- .element: class="fragment" -->
 
 ---
 
@@ -160,7 +147,7 @@ fn get_value_treasures(treasures: &Vec<Treasure>) {
 
 ## Borrowing &mut T
 
-Exactly one mutable reference
+Exactly <span style="color:orange">one mutable</span> reference
 
 ``` rust
 fn main() {
@@ -182,22 +169,22 @@ fn get_value_treasures(treasures: &mut Vec<Treasures>) {
 
 ## Borrowing &mut T
 
-```
+<pre><code data-trim data-noescape class="rust">
 error[E0499]: cannot borrow `treasures` as mutable more than 
 once at a time
  --> src/main.rs:7:19
   |
 4 |     let t1 = &mut treasures;
-  |                   --------- first mutable borrow 
-  |                              occurs here
+  |                  <span class="fragment highlight-mark">--------- first mutable borrow occurs here</span> 
+  |                              
 ...
 7 |     let t2 = &mut treasures; 
-  |                   ^^^^^^^^^ second mutable 
-  |                             borrow occurs here
+  |                   <span class="fragment highlight-mark">^^^^^^^^^ second mutable borrow occurs here</span> 
+  |                             
 8 |     get_value_treasures(t2);
 9 | }
   | - first borrow ends here
-```
+</code></pre>
 
 ---
 
@@ -211,4 +198,4 @@ once at a time
 
 <p> Rust code is not just <span style="color:orange">fast</span> because of <span style="color:orange">no GC</span></p>  <!-- .element: class="fragment" -->
 
-<p> it's <span style="color:red">more safety !!</span></p> <!-- .element: class="fragment" -->
+<p style="color:red;font-size:175%"> it's more safety !!</p><!-- .element: class="fragment" -->

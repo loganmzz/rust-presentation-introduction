@@ -1,3 +1,7 @@
+<!-- .slide: data-background="/assets/img/productive.gif" -->
+
+---
+
 <!-- .slide: data-background="/assets/img/why_tests_are_important.gif" -->
 
 ---
@@ -73,14 +77,13 @@ pub fn append<K, V>(&mut self, key: K, value: V) where K: Into<Cow<'static, str>
 
 By `default` tests run `concurrently`
 
-``` bash
-$ RUST_TEST_THREADS=5 cargo test   # Run tests with concurrency
+<pre><code class="bash" data-trim data-noescape>
+$ <span class="fragment highlight-mark">RUST_TEST_THREADS=5</span> cargo test   # Run tests with concurrency
 
 ...
 
-$ cargo test -- --test-threads=5   # Same as above
-...
-```
+$ cargo test <span class="fragment highlight-mark">-- --test-threads=5</span>   # Same as above
+</pre></code>
 
 ---
 

@@ -1,43 +1,43 @@
 #![allow(dead_code,unused_variables)]
 
-struct Vide;
-struct SansChamps {}
+struct Void;
+struct NoAttributes {}
 
-struct Personne {
-    nom: String,
-    prenom: String,
+struct Person {
+    last_name: String,
+    first_name: String,
 }
 
-struct Parents(Personne, Personne);
-struct Famille {
+struct Parents(Person, Person);
+struct Family {
     parents: Parents,
-    enfants: Vec<Personne>,
+    children: Vec<Person>,
 }
 
-impl Personne {
-    fn new(nom: &str, prenom: &str) -> Personne {
-        Personne { nom: String::from(nom), prenom: String::from(prenom) }
+impl Person {
+    fn new(last_name: &str, first_name: &str) -> Person {
+        Person { last_name: String::from(last_name), first_name: String::from(first_name) }
     }
 }
 
 fn main() {
     // Unit
-    let vide = Vide;
-    let sans_champs = SansChamps {};
+    let void = Void;
+    let no_fields = NoAttributes {};
 
     // Classique
-    let dupont_jean = Personne { nom: String::from("MARTIN"), prenom: String::from("Jean") };
+    let dupont_jean = Person { last_name: String::from("MARTIN"), first_name: String::from("Jean") };
 
     // Tuple
-    let parents = Parents(dupont_jean, Personne { nom: String::from("MARTIN"), prenom: String::from("Marie") });
+    let parents = Parents(dupont_jean, Person { last_name: String::from("MARTIN"), first_name: String::from("Marie") });
 
-    let enfants = vec![
-        Personne { nom: String::from("MARTIN"), prenom: String::from("Philippe") },
-        Personne { nom: String::from("MARTIN"), prenom: String::from("Michel")   }
+    let children = vec![
+        Person { last_name: String::from("MARTIN"), first_name: String::from("Philippe") },
+        Person { last_name: String::from("MARTIN"), first_name: String::from("Michel")   }
     ];
 
-    let duponts = Famille { parents, enfants };
+    let duponts = Family { parents, children };
 
     // impl
-    let enfants = vec![ Personne::new("BERNARD", "Alain"), Personne::new("BERNARD", "Nathalie") ];
+    let children = vec![ Person::new("BERNARD", "Alain"), Person::new("BERNARD", "Nathalie") ];
 }

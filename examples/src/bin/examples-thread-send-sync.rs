@@ -2,11 +2,11 @@ use std::fmt::{Debug, Formatter, Result};
 use std::thread;
 use std::sync::Arc;
 
-struct Personne(String);
+struct Person(String);
 
-impl Debug for Personne {
+impl Debug for Person {
     fn fmt(&self, f: &mut Formatter) -> Result {
-        write!(f, "Bonjour {}", self.0)
+        write!(f, "Hello {}", self.0)
     }
 }
 
@@ -29,11 +29,11 @@ fn into_threads<T: Debug + Send + Sync + 'static>(data: T) {
 }
 
 fn main() {
-    into_thread(Personne(String::from("DUBOIS")));
-    // into_thread(std::rc::Rc::new(Personne(String::from("MOREAU"))));
+    into_thread(Person(String::from("DUBOIS")));
+    // into_thread(std::rc::Rc::new(Person(String::from("MOREAU"))));
 
-    into_thread("Bonjour LAURENT");
+    into_thread("Hello LAURENT");
 
-    into_threads(Personne(String::from("SIMON")));
-    // into_thread(std::rc::Rc::new(Personne(String::from("MICHEL"))));
+    into_threads(Person(String::from("SIMON")));
+    // into_thread(std::rc::Rc::new(Person(String::from("MICHEL"))));
 }

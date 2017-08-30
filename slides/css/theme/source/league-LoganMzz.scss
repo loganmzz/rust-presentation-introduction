@@ -43,9 +43,22 @@ $codeInlineFgColor: orange;
 }
 
 .reveal {
-    h1, h2, h3, h4 {
+    h1, h2, h3, h4, h5, h6 {
         code {
             text-transform: initial;
         }
+    }
+
+    h1 + h1, h2 + h2, h3 + h3, h4 + h4, h5 + h5, h6 + h6 {
+        margin-top: -20px;
+    }
+
+    blockquote, pre {
+        width: 97%;
+        max-width: calc(100% - 2em);
+    }
+
+    pre code {
+        max-height: 600px;
     }
 }

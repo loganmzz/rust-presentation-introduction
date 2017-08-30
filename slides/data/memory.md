@@ -1,51 +1,51 @@
-## Mémoire et parallélisme
+## Memory & paralellism
 
-* Sur la pile (par défaut)
+* Stack by default
 * Optimisations
-    * Transfert vers la pile
-    * Transfert vers le tas
+    * Move to stack
+    * Move to heap
 
 Note:
-* (= Java) _Escape analysis_
-* _Smart pointers_
+* (= Java) Escape analysis
+* Smart pointers
 
 ---
 
 ## `Drop`
 
-* `finalize()` de Java
-* Déallocation manuelle `drop()`
+* Java-like `finalize()`
+* Manual deallocation `drop()`
 
 ```rust
-struct Personne(String);
-impl Drop for Personne {
+struct Person(String);
+impl Drop for Person {
     fn drop(&mut self) {
-        println!("Au revoir {}", self.0);
+        println!("Goodbye {}", self.0);
     }
 }
 
-let richard = Personne(String::from("RICHARD"));
+let richard = Person(String::from("RICHARD"));
 drop(richard);
 ```
 
 Note:
-* `std::mem::drop` => _ownership_
+* `std::mem::drop` => ownership
 `examples-memory-drop.rs`
 
 ---
 
 ## Tas (`Box`)
 
-* Type récursif
+* Recursive types
 
 ```rust
-enum Liste<T> {
+enum List<T> {
     Nil,
-    Cons(T, Box<Liste<T>>),
+    Cons(T, Box<List<T>>),
 }
 ```
 
-* Taille inconnue
+* Unknown size
 
 ```rust
 trait Foo: Debug {}
@@ -59,49 +59,49 @@ Note:
 
 ---
 
-## Pointeur partagé (`Arc`)
+## Shared reference (`Arc`)
 
 ```rust
-fn dis_bonjour(personne: Arc<Personne>) {
-    println!("Bonjour {}", persone.0);
+fn say_hello(invidual: Arc<Person>) {
+    println!("Hello {}", person.0);
 }
 
-fn essaie_de_dire_bonjour(personne: Weak<Personne>) {
-    personne.upgrade().map_or_else(
-        | | println!("La personne est partie ..."),
-        |p| dis_bonjour(p)
+fn try_say_hello(person: Weak<Person>) {
+    person.upgrade().map_or_else(
+        | | println!("Person is gone ..."),
+        |p| say_hello(p)
     );
 }
 
-let robert = Arc::from(Personne(String::from("ROBERT")));
-let faible = Arc::downgrade(&robert);
-dis_bonjour(robert.clone());
-essaie_de_dire_bonjour(faible.clone());
+let robert = Arc::from(Person(String::from("ROBERT")));
+let weak = Arc::downgrade(&robert);
+say_hello(robert.clone());
+try_say_hello(weak.clone());
 drop(robert);
-essaie_de_dire_bonjour(faible);
+try_say_hello(faible);
 ```
 
 Note:
-* **A**tomic **R**eference **C**Counter
-* `std::sync::Arc` => fonctions associées VS méthodes référence ciblée
+* **A**tomic **R**eference **C**ounter
+* `std::sync::Arc` => associated fonctions VS target reference methods
 * `std::sync::Weak`
-    * pas d'accès aux méthodes référence ciblée
-    * casser les cycles
+    * no direct access to target reference methods
+    * break reference cycles
 * `examples-memory-arc.rs`
 
 
 ---
 
-## Processus léger (`thread`)
+## Light process (`thread`)
 
 ```rust
-fn calcul() -> i64 {
+fn computation() -> i64 {
     42 * 314
 }
 
-let handle = thread::spawn(calcul);
-let resultat = handle.join().expect("Erreur durant le calclul");
-println!("Résultat: {}", resultat);
+let handle = thread::spawn(computation);
+let result = handle.join().expect("Error during computation");
+println!("Result: {}", result);
 ```
 
 Note:
@@ -109,7 +109,8 @@ Note:
 
 ---
 
-## Tranfert (`Send`) et Partage (`Sync`)
+## Transfer (`Send`)
+## Share (`Sync`)
 
 ```rust
 let reference = Arc::new(String::from("A shared string"));
@@ -125,24 +126,24 @@ for handle in handles {
 
 Note:
 * `examples-thread-send-async.rs`
-* Automatique si tous les composant sont `Send` ou `Sync`
+* Automatic implementations based on attributes
 
 ---
 
-## Channel
+## Data exchange (`channel`)
+
+* 1 consumer (`Receiver`)
+* 1..N producers (`Sender`)
 
 ```rust
-fn main() {
+let (tx1, rx) = channel();
+let tx2 = tx1.clone();
 
-	let (tx, rx) = mpsc::channel();
+spawn(move || tx1.send(vec![1, 2, 3]).unwrap());
+spawn(move || tx2.send(vec![4, 5, 6]).unwrap());
 
-	thread::spawn(move || {
-		let mut scores = vec![2, 4];
-        tx.send(scores);
-	});
-
-	let scores: Vec<i32> = rx.recv().unwrap();
-	println!("{:?}", scores);
+for scores in rx {
+    println!("Received : {:?}", scores);
 }
 ```
 
@@ -167,7 +168,7 @@ fn main() {
 }
 ```
 
-```rust
+```
 error[E0382]: use of moved value: `scores`
   --> main.rs:13:3
 12 | 		tx.send(scores);

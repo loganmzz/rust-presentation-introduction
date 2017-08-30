@@ -1,20 +1,20 @@
-struct Personne(String);
+struct Person(String);
 
-impl Personne {
-    fn new(nom: &str) -> Personne {
-        Personne(String::from(nom))
+impl Person {
+    fn new(name: &str) -> Person {
+        Person(String::from(name))
     }
 }
 
-impl Drop for Personne {
+impl Drop for Person {
     fn drop(&mut self) {
-        println!("Au revoir {}", self.0)
+        println!("Goodbye {}", self.0)
     }
 }
 
 fn main() {
-    println!("main: Début");
-    let richard = Personne::new("RICHARD");
+    println!("main: Begin");
+    let richard = Person::new("RICHARD");
     drop(richard);
-    println!("main: Fin");
+    println!("main: End");
 }

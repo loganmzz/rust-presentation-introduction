@@ -2,7 +2,7 @@
 
 ---
 
-## [IDEs](https://forge.rust-lang.org/ides.html)
+## [IDE](https://forge.rust-lang.org/ides.html)
 
 * [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=saviorisdead.RustyCode)
 * [IntelliJ IDEA](https://intellij-rust.github.io/)

@@ -142,11 +142,6 @@ body {
 .reveal blockquote {
 	display: block;
 	position: relative;
-    /** @LoganMzz:start **/
-    // width: 70%;
-    width: 97%;
-    max-width: calc(100% - 2em);
-    /** @LoganMzz:end **/
 	margin: $blockMargin auto;
 	padding: 5px;
 
@@ -166,11 +161,6 @@ body {
 .reveal pre {
 	display: block;
     position: relative;
-    /** @LoganMzz:start **/
-    // width: 90%;
-    width: 97%;
-    max-width: calc(100% - 2em);
-    /** @LoganMzz:end **/
 	margin: $blockMargin auto;
 
 	text-align: left;
@@ -190,10 +180,6 @@ body {
 	display: block;
 	padding: 5px;
     overflow: auto;
-    /** @LoganMzz:start **/
-    // max-height: 400px;
-    max-height: 600px;
-    /** @LoganMzz:end **/
 	word-wrap: normal;
 }
 

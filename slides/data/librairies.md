@@ -1,6 +1,6 @@
 ## Librairies
 
-| Asynchrone | Web | Serialization | Divers |
+| Asynchronous | Web | Serialization | Miscellaneous |
 | ---------- | --- | ------------- | ------ |
 | Mio | Iron | Serde | Piston |
 | Tokio | Rocket | Nom | Leaf |

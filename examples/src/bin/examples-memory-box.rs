@@ -1,18 +1,18 @@
 use std::fmt;
 
-enum Liste<T> {
+enum List<T> {
     Nil,
-    Cons(T, Box<Liste<T>>),
+    Cons(T, Box<List<T>>),
 }
 
-impl<T: fmt::Display> fmt::Display for Liste<T> {
+impl<T: fmt::Display> fmt::Display for List<T> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "[")?;
-        let mut liste: &Liste<_> = self;
-        while let &Liste::Cons(ref val, ref tail) = liste {
+        let mut list: &List<_> = self;
+        while let &List::Cons(ref val, ref tail) = list {
             write!(f, "{}", val)?;
-            liste = &*tail;
-            if let &Liste::Cons(_, _) = liste {
+            list = &*tail;
+            if let &List::Cons(_, _) = list {
                 write!(f, ", " )?;
             }
         }
@@ -20,13 +20,7 @@ impl<T: fmt::Display> fmt::Display for Liste<T> {
     }
 }
 
-trait Foobar: fmt::Debug {}
-
-fn consume(foobar: Box<Foobar>) {
-    println!("{:?}", foobar);
-}
-
 fn main() {
-    let liste = Liste::Cons(1, Box::new(Liste::Cons(2, Box::new(Liste::Nil))));
-    println!("{}", liste);
+    let list = List::Cons(1, Box::new(List::Cons(2, Box::new(List::Nil))));
+    println!("{}", list);
 }

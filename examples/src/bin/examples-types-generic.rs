@@ -48,34 +48,34 @@ impl<T: fmt::Display> fmt::Display for Singleton<T> {
 }
 
 
-trait AffichageSingleton {
-    fn affiche_singleton(self);
+trait SingletonDisplay {
+    fn display_singleton(self);
 }
 
-impl<T> AffichageSingleton for T where Singleton<T>: fmt::Display {
-    fn affiche_singleton(self) {
-        println!("affichage singleton => {}", Singleton(self));
+impl<T> SingletonDisplay for T where Singleton<T>: fmt::Display {
+    fn display_singleton(self) {
+        println!("display singleton => {}", Singleton(self));
     }
 }
 
 
 fn main() {
-    let deux = Singleton(2);
+    let two = Singleton(2);
     let six = Singleton(6);
-    println!("debug 2+6 => {:?}", deux.add(&six));
+    println!("debug 2+6 => {:?}", two.add(&six));
 
 
-    let deux_into_vec: Vec<_> = deux.adapt();
-    let deux_into_str = deux.adapt();
-    println!("debug vec => {:?}  /  debug str => {:?}", deux_into_vec, deux_into_str);
-    display(deux_into_str);
+    let two_into_vec: Vec<_> = two.adapt();
+    let two_into_str = two.adapt();
+    println!("debug vec => {:?}  /  debug str => {:?}", two_into_vec, two_into_str);
+    display(two_into_str);
 
 
-    println!("display deux => {}", deux);
-    let liste = Singleton(vec!(1, 2, 3));
-    println!("debug liste => {:?}", liste);
-    // println!("{}", liste);
+    println!("display two => {}", two);
+    let list = Singleton(vec!(1, 2, 3));
+    println!("debug list => {:?}", list);
+    // println!("{}", list);
 
-    42.affiche_singleton();
-    // deux_into_vec.affiche_singleton();
+    42.display_singleton();
+    // two_into_vec.display_singleton();
 }

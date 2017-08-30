@@ -1,8 +1,8 @@
-## Non présenté
+## Additional features
 
-* gestion avancées des erreurs
-* types associés
-* Macros procédurales (`derive`)
-* _Foreign Function Interface_
-* polymorphisme (`trait object`)
-* concurrence
+* Advanced error management
+* Associated types
+* Procedurale macros (`derive`)
+* **F**oreign **F**unction **I**nterface
+* Polymorphism (`trait object`)
+* Concurrency

@@ -1,24 +1,24 @@
 #![allow(dead_code,unused_variables)]
 
-enum Personne {
-    Anonyme,
-    Physique { nom: String, prenom: String },
-    Entreprise { raison_sociale: String, proprietaires: Vec<Personne> },
+enum Person {
+    Anonymous,
+    Natural { last_name: String, first_name: String },
+    Company { name: String, owners: Vec<Person> },
     Association(String),
 }
 
-impl Personne {
+impl Person {
     fn afficher_message(self) {
         match self {
-            Personne::Anonyme => println!("Je ne suis personne"),
-            Personne::Physique { nom, prenom } => println!("Je me présente, je m'appelle {} {}", prenom, nom),
-            Personne::Entreprise { raison_sociale, .. } => println!("$$$ {} $$$", raison_sociale),
-            Personne::Association(nom) => println!("❤❤❤ {} ❤❤❤", nom)
+            Person::Anonymous => println!("I am no one"),
+            Person::Natural { last_name, first_name } => println!("Hello, my name is {} {}", first_name, last_name),
+            Person::Company { name, .. } => println!("$$$ {} $$$", name),
+            Person::Association(nom) => println!("❤❤❤ {} ❤❤❤", nom)
         }
     }
 }
 
 fn main() {
-    let personne: Personne = Personne::Association(String::from("WWF"));
+    let personne: Person = Person::Association(String::from("WWF"));
     personne.afficher_message();
 }

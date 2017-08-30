@@ -1,6 +1,6 @@
-fn afficher_1_a_10() -> std::thread::ThreadId {
+fn display_1_to_10() -> std::thread::ThreadId {
     let thread = std::thread::current();
-    let thread_name = thread.name().unwrap_or("<inconnu>");
+    let thread_name = thread.name().unwrap_or("<unknown>");
     for i in 1..11 {
         println!("{}: {}", thread_name, i);
     }
@@ -12,15 +12,15 @@ fn main() {
                         .map(|thread_name|
                           std::thread::Builder::new()
                                                .name(thread_name.clone())
-                                               .spawn(afficher_1_a_10)
-                                               .expect(&format!("Erreur lors du lancement du {}", thread_name))
+                                               .spawn(display_1_to_10)
+                                               .expect(&format!("Error launching {}", thread_name))
                         )
                         .collect();
     for handle in handles {
         let thread = String::from(handle.thread().name().unwrap());
         let resultat = handle.join()
-                             .expect("Erreur lors de la génération du resultat");
+                             .expect("Error during result generation");
 
-        println!("Résultat: {}={:?}", thread, resultat);
+        println!("Result: {}={:?}", thread, resultat);
     }
 }

@@ -1,9 +1,9 @@
 ## Types
 
 * Structures
-* Énumérations
+* Enumerations
 * Traits
-* Génériques
+* Generics
 
 ---
 
@@ -11,7 +11,7 @@
 
 * _Unit_
 
-* Classique
+* Classic
 
 * Tuples
 
@@ -20,10 +20,10 @@ Note:
 
 ---
 
-## Énumérations (`enum`)
+## Enumerations (`enum`)
 
-* Ensemble fini de variantes
-* Les variantes sont comme des `struct`
+* Finite variant set
+* Variants are `struct`-like
 
 Note:
 `examples-types-enum.rs`
@@ -32,33 +32,33 @@ Note:
 
 ## Traits (`trait`)
 
-* Interfaces à la Java
-* Implémenter par l'auteur du trait ou type cible
+* Java-like interfaces
+* Implemented by author from trait or target type
 _Orphan rule_
-* Surcharge d'opérateur
+* Operator overriding
 
 Note:
-* (= Java) pas d'attributs
-* (= Java) implémentations par défaut
-* (~ Java) héritage (_composition over inheritance_)
-* (+ Java) méthodes statiques
-* (+ Java) surcharge d'opérateur
+* (= Java) no attributes
+* (= Java) default method implementation
+* (~ Java) inheritance (_composition over inheritance_)
+* (+ Java) static methods
+* (+ Java) operator overriding
 * `examples-types-trait.rs`
 
 ---
 
 ## Generics
 
-* _Template_ à la C++
-* _static dispatch_*
-* Implémentations générique (`impl<...>`)
-* Contraintes complexes (`where`)
+* C++-like template
+* Static dispatch*
+* Generic implementation (`impl<...>`)
+* Complex constraints (`where`)
 
 Note:
-* (- Java) pas héritage => pas variance
-* (+ Java) contraintes négatives
-* (+ Java) inférence avancée
-* (+ Java) pas réification => static dispatch
-* (+ Java) plusieurs implémentations
-* (+ Java) types par défaut
+* (- Java) no inheritance => no variance
+* (+ Java) negative constraints
+* (+ Java) advanced inference
+* (+ Java) no reification => static dispatch
+* (+ Java) many implementations
+* (+ Java) default type parameter
 * `examples-types-generic.rs`

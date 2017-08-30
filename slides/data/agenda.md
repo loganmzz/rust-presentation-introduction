@@ -1,15 +1,15 @@
 ## Programme
 
-* Histoire
-    * Genèse du langage (L)
-    * Idées du langage (A)
-* Langage
-    * Premier code (A)
+* History
+    * Genesis (L)
+    * Ideas (A)
+* Language
+    * Getting started (A)
     * Types (L)
     * Ownership (A)
-    * Mémoire et parallélisme (L)
-    * Macros par l'exemple (L)
-    * Autres fonctionnalités (L)
+    * Memory & paralellism (L)
+    * Macros by example (L)
+    * Additional features (L)
 * ???
     * Tests (L)
     * _Workflow_ (A)

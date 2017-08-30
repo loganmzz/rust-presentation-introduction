@@ -1,52 +1,52 @@
 use std::sync::{Arc, Weak};
 
-struct Personne(String);
+struct Person(String);
 
-impl Personne {
-    fn new(nom: &str) -> Personne {
-        Personne(String::from(nom))
+impl Person {
+    fn new(nom: &str) -> Person {
+        Person(String::from(nom))
     }
 
-    fn bonjour(&self) {
-        println!("Bonjour {}", self.0);
+    fn hello(&self) {
+        println!("Hello {}", self.0);
     }
 }
 
-impl std::ops::Drop for Personne {
+impl std::ops::Drop for Person {
     fn drop(&mut self) {
-        println!("Au revoir {}", self.0);
+        println!("Goodbye {}", self.0);
     }
 }
 
-fn dis_bonjour(personne: Arc<Personne>) {
-    personne.bonjour();
+fn say_hello(person: Arc<Person>) {
+    person.hello();
 }
 
-fn essaie_de_dire_bonjour(personne: Weak<Personne>) {
-    personne.upgrade().map_or_else(
-        | | println!("La personne est partie ..."),
-        |p| dis_bonjour(p)
+fn try_say_hello(person: Weak<Person>) {
+    person.upgrade().map_or_else(
+        | | println!("Person is gone ..."),
+        |p| say_hello(p)
     );
 }
 
 fn main() {
-    let robert = Arc::from(Personne::new("ROBERT"));
-    dis_bonjour(robert);
+    let robert = Arc::from(Person::new("ROBERT"));
+    say_hello(robert);
 
     println!("\n--------------------------------\n");
 
-    let durand = Arc::from(Personne::new("DURAND"));
-    dis_bonjour(durand.clone());
+    let durand = Arc::from(Person::new("DURAND"));
+    say_hello(durand.clone());
 
     println!("\n--------------------------------\n");
 
-    let durand_faible = Arc::downgrade(&durand);
-    essaie_de_dire_bonjour(durand_faible.clone());
+    let weak_durand = Arc::downgrade(&durand);
+    try_say_hello(weak_durand.clone());
 
     println!("\n--------------------------------\n");
 
-    dis_bonjour(durand);
-    essaie_de_dire_bonjour(durand_faible);
+    say_hello(durand);
+    try_say_hello(weak_durand);
 
     println!("\n--------------------------------\n");
 }

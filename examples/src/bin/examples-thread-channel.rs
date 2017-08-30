@@ -2,7 +2,8 @@ use std::sync::mpsc::channel;
 use std::thread::{spawn, current};
 
 fn main() {
-    let (tx, rx) = channel::<String>();
+
+    let (tx, rx) = channel();
     
     for i in 0..3 {
         let tx = tx.clone();

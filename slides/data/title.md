@@ -1,12 +1,12 @@
-## Demain j'arrête le café,
-## je me mets au crabe !
+## Tomorrow I stop coffee,
+## I get to crab !
 
 ---
 
-## Avertissement
+## Disclaimer
 
-* Ceci n'est pas un cours Rust
-* Garder vos questions pour la fin !
+* This is NOT a Rust course
+* Keep your questions for last
 
 Note:
-* une introduction pour aider à mettre le pied à l'étrier
+* help attendees get a foot on the ladder

@@ -11,11 +11,11 @@
 
 Note:
 * Servo
-* x/6 semaines : Rust 1.X
+* x/6 weeks : Rust 1.X
 
 ---
 
-## Release Channels
+## Release channels
 
 * nightly
 * beta
@@ -24,8 +24,8 @@ Note:
 ## [RFC](https://github.com/rust-lang/rfcs)
 
 Note:
-* Modèle inspiré par Google
-* `nightly` => développement courant, tous les jours
-* `beta` => stabiliser les features et correctifs, merge des features
-* Beaucoup de projet build sur `nightly` (e.g. `cargo`)
+* Inspired by Google
+* `nightly` => current development, daily basis
+* `beta` => stable features + fixes, merge features
+* Many projects built against `nightly` (e.g. `cargo`)
 

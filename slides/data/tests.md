@@ -47,7 +47,7 @@ fn worker_thread_index() {
 
 ## Documentation tests
 
-<pre><code class="rust" data-trim data-noescape>
+````rust
 /// Append a name and value for the `Cookie`.
 ///
 /// ```
@@ -63,7 +63,7 @@ pub fn append<K, V>(&mut self, key: K, value: V) where K: Into<Cow<'static, str>
 {
     self.0.append(key.into(), value.into());
 }
-</code></pre>
+````
 
 [src/header/common/cookie.rs](https://github.com/hyperium/hyper/blob/1059eb349a560a4b9b83181acd9db19d1ef42073/src/header/common/cookie.rs)
 

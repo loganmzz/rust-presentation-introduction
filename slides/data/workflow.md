@@ -44,12 +44,12 @@
 ---
 
 ### [Docs.rs](https://docs.rs/)
-
-Automatically builds crates' documentation released on [crates.io](https://crates.io/)
-
 <video autoplay muted loop>
     <source data-src="/assets/img/docs_rs.mp4" type="video/mp4" />
 </video>
+
+Note:
+Automatically builds crates' documentation released on [crates.io](https://crates.io/)
 
 ---
 

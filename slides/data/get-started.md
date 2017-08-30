@@ -2,7 +2,7 @@
 
 ---
 
-## first code
+## First code
 
 * Basic syntax
 * Pattern matching <!-- .element class="fragment" -->

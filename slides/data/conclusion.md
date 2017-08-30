@@ -1,21 +1,21 @@
 ## Conclusion
 
-* Memory Safety _without_ GC
+* Memory safety _without_ GC
 * Concurrency ... data races
 * Abstraction ... overhead
 * Stability ... stagnation
 
 ---
 
-## Rust Community
+## Rust cocmunity
 
-* 11,023 Crates on crates.io 
+* 11,023 crates on crates.io 
 
-* 1853 contributors
+* 1,853 contributors
 
-* Most Loved language on stackoverflow
+* Most loved language on Stack Overflow
 
-* 18 on github
+* 18 on GitHub
 
 ---
 

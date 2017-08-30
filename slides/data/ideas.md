@@ -20,13 +20,13 @@
 
 * Efficient 
 
-* Not manage memory 
+* No memory management
 
 * Safe runtime
 
 ---
 
-## Safety vs control
+## Safety VS control
 
 ![llvm_logo](/assets/img/rust_position.jpg)
 

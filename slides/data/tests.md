@@ -33,7 +33,7 @@ fn worker_thread_index() {
 
 1. Place in the `src/*`
 
-2. Add `#[test]` attribute ( and #[ignore], #[should_panic]...)
+2. Add `#[test]` attribute (`#[ignore]`, `#[should_panic]` ...)
 
 3. Use `assert!` macros
 
@@ -63,7 +63,9 @@ fn worker_thread_index() {
 ///
 /// assert_eq!(cookie.to_string(), "foo=bar; foo=quux");
 /// ```
-pub fn append<K, V>(&mut self, key: K, value: V) where K: Into<Cow<'static, str>>, V: Into<Cow<'static, str>>
+pub fn append<K, V>(&mut self, key: K, value: V) where
+    K: Into<Cow<'static, str>>,
+    V: Into<Cow<'static, str>>
 {
     self.0.append(key.into(), value.into());
 }

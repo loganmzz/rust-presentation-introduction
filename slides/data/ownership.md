@@ -3,7 +3,7 @@
 
 ---
 
-<p>Not safety = <span>mutable data</span><!-- .element: class="fragment" --><span> + more one ref on it</span><!-- .element: class="fragment" -->
+<p>No safety = <span>mutable data</span><!-- .element: class="fragment" --><span> + more one ref on it</span><!-- .element: class="fragment" -->
 
 ---
 
@@ -11,7 +11,7 @@
 
 ![cargo logo](/assets/img/gc.png)
 
-<p><span style="color:orange;">Can't prevent to</span>: data races, iterator invalidation,...</p> <!-- .element class="fragment" -->
+<p><span style="color:orange;">Can't prevent</span>: data races, iterator invalidation,...</p> <!-- .element class="fragment" -->
 
 ---
 
@@ -70,7 +70,7 @@ fn generate_events() {
 fn transform_events(<span class="fragment highlight-mark">events</span>: Vec<Event>) {
     // Ownership of events transfered in
     // transform_event scope 
-} <span class="fragment" style="color:red;font-size:larger;">◀️ free events memory allocation</span>
+} <span class="fragment" style="color:red;font-size:larger;">◀️ free memory allocation events</span>
 </code></pre> 
 
 ---

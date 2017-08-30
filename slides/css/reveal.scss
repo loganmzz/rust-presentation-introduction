@@ -170,6 +170,7 @@ body {
 	}
 }
 
+.reveal .slides section .fragment.highlight-mark,
 .reveal .slides section .fragment.highlight-red,
 .reveal .slides section .fragment.highlight-current-red,
 .reveal .slides section .fragment.highlight-green,
@@ -179,6 +180,11 @@ body {
 	opacity: 1;
 	visibility: inherit;
 }
+	.reveal .slides section .fragment.highlight-mark.visible {
+		color: black;
+		background-color: orange;
+		font-size:108%;
+	}
 	.reveal .slides section .fragment.highlight-red.visible {
 		color: #ff2c2d
 	}

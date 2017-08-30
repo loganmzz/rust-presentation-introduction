@@ -2,12 +2,10 @@
 
 ---
 
-## Premier code
+## first code
 
-* IDE (RLS, racer, rustfmt, ....)
-* VS Code ou slide
-* exemples _(avec annotations de type)_
-    * `while let mut` (+ `if let mut` ?)
-    * _Pattern matching_ (`match`, `enum`)
-    * Option / Result
-* cargo build
+* Basic syntax
+* Pattern matching <!-- .element class="fragment" -->
+* Modules <!-- .element class="fragment" -->
+* Option / Result <!-- .element class="fragment" -->
+* Generics <!-- .element class="fragment" -->

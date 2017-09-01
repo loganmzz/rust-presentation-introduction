@@ -9,7 +9,7 @@
 
 ## Structures (`struct`)
 
-* _Unit_
+* Unit
 
 * Classic
 
@@ -34,7 +34,7 @@ Note:
 
 * Java-like interfaces
 * Implemented by author from trait or target type
-_Orphan rule_
+(_Orphan rule_)
 * Operator overriding
 
 Note:

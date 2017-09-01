@@ -11,11 +11,11 @@
 
 ![cargo logo](/assets/img/gc.png)
 
-<p><span style="color:orange;">Can't prevent</span>: data races, iterator invalidation,...</p> <!-- .element class="fragment" -->
+_Can't prevent_: data races, iterator invalidation,...</p> <!-- .element class="fragment" -->
 
 ---
 
-## Java <span style="color:orange">Runtime errors</span>
+## Java _Runtime errors_
 ```
 Exception in thread "main" java.lang.NullPointerException
 
@@ -26,7 +26,7 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException
 
 ---
 
-## C/C++ <span style="color:orange">Runtime errors</span>
+## C/C++ _Runtime errors_
 
 ```
 $ ./client_demo
@@ -47,13 +47,13 @@ Segmentation fault
 
 ## Rust solution
 
-> Rust <span style="color:orange">avoids</span> the need for <span style="color:orange">GC</span> through:
+> Rust _avoids_ the need for _GC_ through:
 
 * ownership 
 * borrowing
 * lifetime
 
-<span style="color:red">Check at compile time.</span>
+**Check at compile time.**
 <!-- .element: class="fragment" --> 
 
 ---
@@ -113,16 +113,15 @@ error[E0382]: use of moved value: `events`
 
 ## Ownership
 
-Ensure <span style="color:red">only one</span> active <span style="color:orange">binding</span> to  
-<span style="color:orange">allocated memory at a time</span>
+Ensure **only one** active _binding_ to _allocated memory at a time_
 
-<p style="color:orange;font-size:larger">✔️ eliminates data race</span>  <!-- .element: class="fragment" -->
+_✔️ eliminates data race_  <!-- .element: class="fragment" -->
 
 ---
 
 ## Borrowing
 
-> What if, we <span style="color:red">borrow</span> the resource instead?
+> What if, we **borrow** the resource instead?
 
 ---
 
@@ -147,7 +146,7 @@ fn get_value_treasures(treasures: &Vec<Treasure>) {
 
 ## Borrowing &mut T
 
-Exactly <span style="color:orange">one mutable</span> reference
+Exactly _one mutable_ reference
 
 ``` rust
 fn main() {
@@ -190,12 +189,12 @@ once at a time
 
 ## ownership look like
 
-> Compile time <span style="color:orange">read-write lock</span> on data (not the code)
+> Compile time _read-write lock_ on data (not the code)
 
 ---
 
-## To Conclude
+## To conclude
 
-<p> Rust code is not just <span style="color:orange">fast</span> because of <span style="color:orange">no GC</span></p>  <!-- .element: class="fragment" -->
+<p>Rust code is not just _fast_ because of _no GC_</p>  <!-- .element: class="fragment" -->
 
-<p style="color:red;font-size:175%"> it's more safety !!</p><!-- .element: class="fragment" -->
+**it's more safety !!** <!-- .element: class="fragment big" -->

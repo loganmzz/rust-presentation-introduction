@@ -18,7 +18,7 @@
 
 > Rust can work with pretty much all C/C++ agnostic tools
 
-`kcov, gdb, lldb, perf...`
+`kcov`, `gdb`, `lldb`, `perf`...
 
 ---
 

@@ -12,7 +12,7 @@
     * Additional features (L)
 * ???
     * Tests (L)
-    * _Workflow_ (A)
+    * Workflow (A)
     * Ecosystème (A)
     * Librairies (L: Rayon / A: Rocket,Nom)
 * Demo (L/A)

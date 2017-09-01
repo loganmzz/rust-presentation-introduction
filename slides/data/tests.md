@@ -45,7 +45,7 @@ fn worker_thread_index() {
 
 * tests/*.rs
 
-* different `binaries` for each tests
+* different _binaries_ for each tests
 
 ---
 
@@ -77,7 +77,7 @@ pub fn append<K, V>(&mut self, key: K, value: V) where
 
 ## Concurrency
 
-By `default` tests run `concurrently`
+By _default_ tests run _concurrently_
 
 <pre><code class="bash" data-trim data-noescape>
 $ <span class="fragment highlight-mark">RUST_TEST_THREADS=5</span> cargo test   # Run tests with concurrency

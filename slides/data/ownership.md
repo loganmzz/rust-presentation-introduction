@@ -85,9 +85,7 @@ fn generate_events() {
     <span class="fragment highlight-mark">transform_events(events);</span> 
 }
 
-fn transform_events(events: Vec<Event>) {
-    //...
-}
+fn transform_events(events: Vec<Event>) { /* ... */ }
 </code></pre> 
 
 
@@ -99,7 +97,6 @@ error[E0382]: use of moved value: `events`
   |                   <span class="fragment highlight-mark">------ value moved here</span>
 4 |   transform_events(events);
   |                   <span class="fragment highlight-mark">^^^^^^ value used here after move</span>
-  |
 </code></pre> 
 <!-- .element class="fragment" -->
 
@@ -149,15 +146,13 @@ fn get_value_treasures(treasures: &Vec<Treasure>) {
 Exactly _one mutable_ reference
 
 ``` rust
-fn main() {
-    let mut treasures = get_treasures(...); // take ownership
-    
-    let t1 = &mut treasures;
-    modify_values_treasures(t1);
+let mut treasures = get_treasures(...); // take ownership
 
-    let t2 = &mut treasures; 
-    modify_owner_treasures(t2);
-}
+let t1 = &mut treasures;
+modify_values_treasures(t1);
+
+let t2 = &mut treasures;
+modify_owner_treasures(t2);
 
 fn get_value_treasures(treasures: &mut Vec<Treasures>) {
     // Increase the number of golds

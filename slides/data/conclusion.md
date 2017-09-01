@@ -1,9 +1,12 @@
 ## Conclusion
 
-* Memory safety _without_ GC
-* Concurrency ... data races
-* Abstraction ... overhead
-* Stability ... stagnation
+| | | |
+| --- | :---: | --- |
+| Memory safety | _without_ | GC |
+| Concurrency | _..._ | data races |
+| Abstraction | _..._ | overhead |
+| Stability | _..._ | stagnation |
+| | | |
 
 ---
 

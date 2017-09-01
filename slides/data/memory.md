@@ -154,18 +154,16 @@ for scores in rx {
 ## Ownership messaging (safety)
 
 <pre><code data-trim data-noescape class="rust">
-fn main() {
-	let (tx, rx) = mpsc::channel();
+let (tx, rx) = mpsc::channel();
 
-	thread::spawn(move || {
-		let mut scores = vec![2, 4];
-        tx.send(scores);
-        <span class="fragment highlight-mark">scores.push(125);</span>
-	});
+thread::spawn(move || {
+    let mut scores = vec![2, 4];
+    tx.send(scores);
+    <span class="fragment highlight-mark">scores.push(125);</span>
+});
 
-	let scores: Vec<i32> = rx.recv().unwrap();
-	println!("{:?}", scores);
-}
+let scores: Vec<i32> = rx.recv().unwrap();
+println!("{:?}", scores);
 </code></pre>
 
 <pre><code data-trim data-noescape class="rust"> 

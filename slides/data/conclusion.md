@@ -3,9 +3,9 @@
 | | | |
 | --- | :---: | --- |
 | Memory safety | _without_ | GC |
-| Concurrency | _..._ | data races |
-| Abstraction | _..._ | overhead |
-| Stability | _..._ | stagnation |
+| Concurrency | _..._ | Data races |
+| Abstraction | _..._ | Overhead |
+| Performance | _..._ | Hard syntax |
 | | | |
 <!-- .element: class="no-border" -->
 
@@ -15,11 +15,11 @@
 
 * 11,023 crates on crates.io 
 
-* 1,853 contributors
+* 1,856 contributors
 
-* Most loved language on Stack Overflow
+* [Most loved language](https://insights.stackoverflow.com/survey/2017#most-loved-dreaded-and-wanted) on Stack Overflow
 
-* 18 on GitHub
+* (18)[https://blog.sourced.tech/post/language_migrations/] Most popular languages on GitHub 
 
 ---
 

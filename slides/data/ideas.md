@@ -28,7 +28,7 @@
 
 ## Safety VS control
 
-![llvm_logo](/assets/img/rust_position.jpg)
+![position_in_market](/assets/img/rust_position.jpg)<!-- .element style="background:none; border:none; box-shadow:none;" -->
 
 ---
 

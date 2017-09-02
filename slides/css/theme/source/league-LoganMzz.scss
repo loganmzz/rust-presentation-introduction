@@ -70,4 +70,10 @@ $strongColor: red;
     .big {
         font-size: 175%;
     }
+
+    table.no-border {
+        &, tr, th, td {
+            border: none;
+        }
+    }
 }

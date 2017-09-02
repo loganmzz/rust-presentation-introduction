@@ -7,6 +7,7 @@
 | Abstraction | _..._ | overhead |
 | Stability | _..._ | stagnation |
 | | | |
+<!-- .element: class="no-border" -->
 
 ---
 

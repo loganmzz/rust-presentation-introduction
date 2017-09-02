@@ -19,7 +19,7 @@
 
 * [Most loved language](https://insights.stackoverflow.com/survey/2017#most-loved-dreaded-and-wanted) on Stack Overflow
 
-* (18)[https://blog.sourced.tech/post/language_migrations/] Most popular languages on GitHub 
+* [18th](https://blog.sourced.tech/post/language_migrations/#most-popular-languages-on-github) most popular language on GitHub 
 
 ---
 

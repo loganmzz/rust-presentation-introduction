@@ -36,6 +36,21 @@ $strongColor: red;
 @import "../template/theme";
 // ---------------------------------------------
 
+i {
+    &.h1 {
+        color: red;
+    }
+    &.h2 {
+        color: orange;
+    }
+    &.h3 {
+        color: green;
+    }
+    &.h4 {
+        color: #8D8DED;
+    }
+}
+
 // some overrides after theme template import
 .reveal code {
     color: $codeInlineFgColor;
@@ -59,6 +74,8 @@ $strongColor: red;
         max-height: 600px;
     }
 
+
+
     em {
         color: $emColor;
     }
@@ -76,4 +93,24 @@ $strongColor: red;
             border: none;
         }
     }
+
+    table.center-mid {
+        tr > td:nth-child(2) {
+            text-align: center;
+        }
+    }
+
+    table.headless {
+        thead {
+            display: none;
+        }
+    }
+
+    table.compact {
+        &, tr, th, td {
+            border: none;
+            padding: 0;
+        }
+    }
+
 }

@@ -7,7 +7,7 @@
 | Abstraction | _..._ | Overhead |
 | Performance | _..._ | Hard syntax |
 | | | |
-<!-- .element: class="no-border" -->
+<!-- .element: class="headless no-border" -->
 
 ---
 

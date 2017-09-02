@@ -4,13 +4,18 @@
 
 ## [IDE](https://forge.rust-lang.org/ides.html)
 
-* [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=saviorisdead.RustyCode)
+* VS Code ([by kalitaalexey](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust), [by rust-lang](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust))
 * [IntelliJ IDEA](https://intellij-rust.github.io/)
 * [Eclipse](https://github.com/RustDT/RustDT)
 * [Vim](https://github.com/rust-lang/rust.vim)
 * ...
 
 [Racer](https://github.com/racer-rust/racer) provide code completion
+
+Note:
+* VS Code:
+    * first one a fork from a dropped initial one
+    * second one done recenlty in preview by official tool team
 
 ---
 

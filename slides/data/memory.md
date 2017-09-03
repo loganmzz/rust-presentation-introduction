@@ -34,9 +34,9 @@ Note:
 
 ---
 
-## Tas (`Box`)
+## Tas ([Box](https://doc.rust-lang.org/std/boxed/struct.Box.html))
 
-* Recursive types
+Recursive types
 
 ```rust
 enum List<T> {
@@ -45,7 +45,7 @@ enum List<T> {
 }
 ```
 
-* Unknown size
+Unknown size
 
 ```rust
 trait Foo: Debug {}
@@ -59,7 +59,7 @@ Note:
 
 ---
 
-## Shared reference (`Arc`)
+## Shared reference ([Arc](https://doc.rust-lang.org/std/sync/struct.Arc.html))
 
 ```rust
 fn say_hello(invidual: Arc<Person>) {
@@ -95,13 +95,17 @@ Note:
 ## Light process (`thread`)
 
 ```rust
+
 fn computation() -> i64 {
     42 * 314
 }
 
 let handle = thread::spawn(computation);
+
+
 let result = handle.join().expect("Error during computation");
 println!("Result: {}", result);
+
 ```
 
 Note:
@@ -109,16 +113,22 @@ Note:
 
 ---
 
-## Transfer (`Send`)
-## Share (`Sync`)
+## Transfer ([Send](https://doc.rust-lang.org/std/marker/trait.Send.html))
+## Share ([Sync](https://doc.rust-lang.org/std/marker/trait.Sync.html))
 
 ```rust
 let reference = Arc::new(String::from("A shared string"));
-let handles: Vec<_> = (0..2).map(|_| reference.clone())
-                            .map(|shared|
-   spawn(move || println!("{:?} => {:?}", current().id(), shared))
-                            )
-                            .collect()
+
+let mut handles = Vec::with_capacity(3);
+
+handles = (0..2)
+           .map(|_| reference.clone())
+           .map(|shared|
+                spawn(move ||
+                    println!("{:?} => {:?}", current().id(), shared))
+            )
+            .collect();
+                
 for handle in handles {
     handle.join().unwrap();
 }
@@ -130,21 +140,23 @@ Note:
 
 ---
 
-## Data exchange (`channel`)
+## Data exchange ([channel](https://doc.rust-lang.org/std/sync/mpsc/fn.channel.html))
 
-* 1 consumer (`Receiver`)
-* 1..N producers (`Sender`)
+`1 Receiver` and `1..N Sender`
 
 ```rust
-let (tx1, rx) = channel();
-let tx2 = tx1.clone();
+let (tx, rx) = mpsc::channel();
+let tx2 = tx.clone();
 
-spawn(move || tx1.send(vec![1, 2, 3]).unwrap());
-spawn(move || tx2.send(vec![4, 5, 6]).unwrap());
+thread::spawn(move || {
+    let mut scores = vec![1, 2];
+    tx.send(scores);
+});
 
-for scores in rx {
-    println!("Received : {:?}", scores);
-}
+thread::spawn(move || tx2.send(vec![3, 4]));
+
+let scores: Vec<i32> = rx.recv().unwrap();
+println!("{:?}", scores);
 ```
 
 ![go_die](/assets/img/gopher_ahah.png) <!-- .element class="fragment fade-up" style="background:none; border:none; box-shadow:none;" -->

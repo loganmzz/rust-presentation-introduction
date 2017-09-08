@@ -11,7 +11,7 @@
 
 ---
 
-## Rust cocmunity
+## Rust community
 
 * 11,023 crates on crates.io 
 

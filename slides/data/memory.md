@@ -172,7 +172,7 @@ error[E0382]: use of moved value: `scores`
 12 | 		tx.send(scores);
    | 		        <span class="fragment highlight-mark">- value moved here</span>
 13 | 		scores.push(125);
-   | 		^ <span class="fragment highlight-mark">value used here after move</span>
+   | 		<span class="fragment highlight-mark">^ value used here after move</span>
 </code></pre>
 <!-- .element class="fragment" -->
 

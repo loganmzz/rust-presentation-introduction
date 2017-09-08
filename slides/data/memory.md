@@ -62,23 +62,14 @@ Note:
 ## Shared reference ([Arc](https://doc.rust-lang.org/std/sync/struct.Arc.html))
 
 ```rust
-fn say_hello(invidual: Arc<Person>) {
-    println!("Hello {}", person.0);
-}
-
-fn try_say_hello(person: Weak<Person>) {
-    person.upgrade().map_or_else(
-        | | println!("Person is gone ..."),
-        |p| say_hello(p)
-    );
-}
-
 let robert = Arc::from(Person(String::from("ROBERT")));
+say_hello(robert.clone()); // Hello ROBERT
+
 let weak = Arc::downgrade(&robert);
-say_hello(robert.clone());
-try_say_hello(weak.clone());
+try_say_hello(weak.clone()); // Hello ROBERT
+
 drop(robert);
-try_say_hello(faible);
+try_say_hello(faible); // Person is gone
 ```
 
 Note:

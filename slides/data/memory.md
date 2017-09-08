@@ -181,4 +181,4 @@ error[E0382]: use of moved value: `scores`
 
 ---
 
-### Concurrency without data races 
+### Concurrency without _data races_

@@ -118,3 +118,15 @@ i {
 .licences {
     max-width: 176px;
 }
+
+.columns {
+    display: flex;
+
+    > * {
+        flex: 1;
+
+        &:not(:last-child) {
+            border-right: 1px solid $mainColor;
+        }
+    }
+}

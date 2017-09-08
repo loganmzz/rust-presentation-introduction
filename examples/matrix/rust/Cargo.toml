@@ -1,0 +1,7 @@
+[package]
+name = "examples-matrix"
+version = "0.1.0"
+authors = ["Logan Mzz <loganmzz@users.noreply.github.com>"]
+
+[dependencies]
+rayon = "0.8.2"

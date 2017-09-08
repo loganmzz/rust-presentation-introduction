@@ -86,7 +86,6 @@ Note:
 ## Light process (`thread`)
 
 ```rust
-
 fn computation() -> i64 {
     42 * 314
 }
@@ -141,14 +140,17 @@ thread::spawn(move || {
     let mut scores = vec![1, 2];
     tx.send(scores);
 });
-
 thread::spawn(move || tx2.send(vec![3, 4]));
 
-let scores: Vec<i32> = rx.recv().unwrap();
-println!("{:?}", scores);
+for scores in rx {
+    println!("Received : {:?}", scores);
+}
 ```
 
-![go_die](/assets/img/gopher_ahah.png) <!-- .element class="fragment fade-up" style="background:none; border:none; box-shadow:none;" -->
+![go_die](/assets/img/gopher_ahah.png)
+<!-- .element class="fragment fade-up" style="background:none; border:none; box-shadow:none;" -->
+
+<!-- .element style="margin-top: -20px" -->
 
 ---
 
@@ -162,9 +164,6 @@ thread::spawn(move || {
     tx.send(scores);
     <span class="fragment highlight-mark">scores.push(125);</span>
 });
-
-let scores: Vec<i32> = rx.recv().unwrap();
-println!("{:?}", scores);
 </code></pre>
 
 <pre><code data-trim data-noescape class="rust"> 

@@ -34,7 +34,7 @@ Note:
 
 ---
 
-## Tas ([Box](https://doc.rust-lang.org/std/boxed/struct.Box.html))
+## Heap ([Box](https://doc.rust-lang.org/std/boxed/struct.Box.html))
 
 Recursive types
 

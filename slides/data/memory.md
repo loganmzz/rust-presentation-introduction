@@ -110,9 +110,7 @@ Note:
 ```rust
 let reference = Arc::new(String::from("A shared string"));
 
-let mut handles = Vec::with_capacity(3);
-
-handles = (0..2)
+let handles = (0..2)
            .map(|_| reference.clone())
            .map(|shared|
                 spawn(move ||

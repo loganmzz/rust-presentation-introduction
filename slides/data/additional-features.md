@@ -6,3 +6,4 @@
 * **F**oreign **F**unction **I**nterface
 * Polymorphism (`trait object`)
 * Concurrency
+* Unsafe

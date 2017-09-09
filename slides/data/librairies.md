@@ -9,11 +9,53 @@
 
 ---
 
-#### Librairies - Asynchrone
+### Librairies - Asynchrone
 
-* Rayon
+[Rayon](https://github.com/nikomatsakis/rayon)
 
 ```rust
+extern crate rayon;
+
+struct Matrix { data: Vec<u32>, cols: usize, rows: usize, }
+
+impl<'l, 'r> std::ops::Mul<&'r Matrix> for &l' Matrix {
+    pub fn mul(self, rhs: &'r Matrix) -> Matrix {
+        let mut data = [0; rhs.cols * self.rows];
+        mul_par(self, rhs, 0, data);
+        Matrix { data, cols: rhs.cols, rows: self.rows }
+    }
+}
+```
+
+Note:
+`/examples/matrix/rust`
+
+---
+
+### Librairies - Asynchrone
+
+[Rayon](https://github.com/nikomatsakis/rayon)
+
+```rust
+fn mul_par(lhs: &Matrix, rhs: &Matrix,
+           index: usize, data: &mut [u32]) {
+    // Sequential
+    if data.len() < threshold {
+        for i in 0..data.len() {
+            let (col, row) = from_index(rhs.cols, index + i);
+            data[i] = (0..lhs.cols)
+                        .map(|c| lhs[(c, row)] * rhs[(col, c)])
+                        .sum();
+        }
+    // Parallel
+    } else {
+        let split = data.len() / 2;
+        let (head, tail) = data.split_at_mut(split);
+        rayon::join(|| mul_par(lhs, rhs, index        , head),
+                    || mul_par(lhs, rhs, index + split, tail)
+        );
+    }
+}
 ```
 
 ---

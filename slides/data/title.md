@@ -1,6 +1,11 @@
 ## Tomorrow I stop coffee,
 ## I get to crab !
 
+![Ferris](/assets/img/ferris.gif)
+<!-- .element: style="margin: -200px 0px -200px 0px; border: none;" -->
+
+<!-- .element: style="overflow: hidden;" -->
+
 ---
 
 ## _Disclaimer_

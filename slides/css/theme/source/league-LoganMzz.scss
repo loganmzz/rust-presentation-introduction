@@ -113,10 +113,18 @@ i {
         }
     }
 
+    section img {
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+
 }
 
 .licences {
+    position: relative;
     max-width: 176px;
+    z-index: 30;
 }
 
 .columns {

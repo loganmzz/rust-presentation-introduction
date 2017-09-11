@@ -148,7 +148,7 @@ for scores in rx {
 ```
 
 ![go_die](/assets/img/gopher_ahah.png)
-<!-- .element class="fragment fade-up" style="background:none; border:none; box-shadow:none;" -->
+<!-- .element class="fragment fade-up" -->
 
 <!-- .element style="margin-top: -20px" -->
 

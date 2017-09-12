@@ -138,3 +138,14 @@ i {
         }
     }
 }
+
+#speakers {
+    .columns {
+        img[alt="Twitter"] {
+            margin: 0;
+            vertical-align: middle;
+            height: 60px;
+            width: 60px;
+        }
+    }
+}

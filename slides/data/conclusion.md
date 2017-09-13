@@ -23,4 +23,4 @@
 
 ---
 
-<!-- .slide: data-background="/assets/img/love_me.gif" -->
+<!-- .slide: data-background="assets/img/love_me.gif" -->

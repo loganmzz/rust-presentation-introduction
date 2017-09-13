@@ -1,5 +1,5 @@
 
-<!-- .slide: data-background="/assets/img/safety.gif" -->
+<!-- .slide: data-background="assets/img/safety.gif" -->
 
 ---
 
@@ -36,12 +36,12 @@ Segmentation fault
 
 ---
 
-<!-- .slide: data-background="/assets/img/debuger_rescue.gif" -->
+<!-- .slide: data-background="assets/img/debuger_rescue.gif" -->
 
 
 ---
 
-<!-- .slide: data-background="/assets/img/dont_want.gif" -->
+<!-- .slide: data-background="assets/img/dont_want.gif" -->
 
 ---
 

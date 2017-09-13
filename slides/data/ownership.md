@@ -9,7 +9,7 @@
 
 ## Garbage collector
 
-![cargo logo](/assets/img/gc.png)
+![cargo logo](assets/img/gc.png)
 
 _Can't prevent_: data races, iterator invalidation,...</p> <!-- .element class="fragment" -->
 
@@ -104,7 +104,7 @@ error[E0382]: use of moved value: `events`
 
 ## Ownership
 
-![vec_ownership](/assets/img/vec_ownership.png)
+![vec_ownership](assets/img/vec_ownership.png)
 
 ---
 

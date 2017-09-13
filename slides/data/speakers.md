@@ -6,12 +6,12 @@
 
 <h3>Logan</h3>
 
-<p>![Twitter](/assets/img/twitter.png) @LoganMzz</p>
+<p>![Twitter](assets/img/twitter.png) @LoganMzz</p>
 
-![MonkeyPatch](/assets/img/MonkeyPatch.png)
+![MonkeyPatch](assets/img/MonkeyPatch.png)
 <!-- .element style="height: 70px" -->
 
-![Developpez.com](/assets/img/Developpez.png)
+![Developpez.com](assets/img/Developpez.png)
 <!-- .element style="height: 100px" -->
 
 </div>
@@ -20,9 +20,9 @@
 
 <h3>Alessio</h3>
 
-<p>![Twitter](/assets/img/twitter.png) @lightplay8</p>
+<p>![Twitter](assets/img/twitter.png) @lightplay8</p>
 
-![clever cloud](/assets/img/clever-cloud.png)
+![clever cloud](assets/img/clever-cloud.png)
 <!-- .element style="height: 100px" -->
 
 </div>

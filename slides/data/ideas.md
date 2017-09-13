@@ -28,7 +28,7 @@
 
 ## Safety VS control
 
-![position_in_market](/assets/img/rust_position.jpg)
+![position_in_market](assets/img/rust_position.jpg)
 
 ---
 
@@ -40,6 +40,6 @@
 
 ## Fast
 
-![llvm_logo](/assets/img/llvm_logo.png)
+![llvm_logo](assets/img/llvm_logo.png)
 
 LLVM backend

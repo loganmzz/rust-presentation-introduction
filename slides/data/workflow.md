@@ -1,5 +1,5 @@
 ## Cargo workflow
-![cargo logo](/assets/img/cargo_logo.png)
+![cargo logo](assets/img/cargo_logo.png)
 
 > Cargo is not just a dependency manager, but Rust’s primary workflow tool.
 

@@ -69,7 +69,7 @@ let weak = Arc::downgrade(&robert);
 try_say_hello(weak.clone()); // Hello ROBERT
 
 drop(robert);
-try_say_hello(faible); // Person is gone
+try_say_hello(weak); // Person is gone
 ```
 
 Note:

@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Logan Mauzaize (@LoganMzz), Alessio Coltellacci (@lightplay8)">
+
+		<title>Tomorrow I stop coffee, I get to crab !</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league-LoganMzz.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/darcula.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+                <div class="slides">
+
+                    <section id="title"
+                            data-markdown="data/title.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="speakers"
+                            data-markdown="data/speakers.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="genesis"
+                            data-markdown="data/genesis.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="ideas"
+                            data-markdown="data/ideas.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="get-started"
+                            data-markdown="data/get-started.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="types"
+                            data-markdown="data/types.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="ownership"
+                            data-markdown="data/ownership.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="memory"
+                            data-markdown="data/memory.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="macros"
+                            data-markdown="data/macros.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="additional-features"
+                            data-markdown="data/additional-features.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="tests"
+                            data-markdown="data/tests.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="workflow"
+                            data-markdown="data/workflow.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="tools"
+                            data-markdown="data/tools.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="librairies"
+                            data-markdown="data/librairies.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="demo"
+                            data-markdown="data/demo.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                    <section id="conclusion"
+                            data-markdown="data/conclusion.md"
+                            data-separator="\n\n===\n\n"
+                            data-separator-vertical="\n\n---\n\n">
+                    </section>
+
+                </div>
+
+                <div class="licences">
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                        <img
+                            alt="Ce(tte) œuvre est mise à disposition selon les termes de la Licence Creative Commons Attribution -  Partage dans les Mêmes Conditions 4.0 International" style="border-width:0"
+                            src="assets/img/cc-by-sa.png"/>
+                    </a>
+                </div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                history: true,
+
+                slideNumber: "c/t",
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

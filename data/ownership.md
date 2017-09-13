@@ -104,7 +104,7 @@ error[E0382]: use of moved value: `events`
 
 ## Ownership
 
-![vec_ownership](assets/img/vec_ownership.png)
+![vec_ownership](assets/img/ownership_events_example.svg) <!-- .element: width="70%" style="background-color:white;" -->
 
 ---
 
@@ -135,7 +135,7 @@ fn read_events() {
 }
 
 fn get_value_treasures(treasures: &Vec<Treasure>) {
-    // Can't modify the events here
+    // Can't modify the treasures here
 }
 ```
 

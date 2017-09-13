@@ -37,14 +37,14 @@
 ---
 
 ### [Crates.io](https://crates.io/) 
-<video autoplay muted loop>
+<video muted loop onclick="this.play();">
     <source data-src="assets/img/cargo.mp4" type="video/mp4" />
 </video>
 
 ---
 
 ### [Docs.rs](https://docs.rs/)
-<video autoplay muted loop>
+<video muted loop onclick="this.play();">
     <source data-src="assets/img/docs_rs.mp4" type="video/mp4" />
 </video>
 

@@ -1,8 +1,8 @@
-<!-- .slide: data-background="/assets/img/productive.gif" -->
+<!-- .slide: data-background="assets/img/productive.gif" -->
 
 ---
 
-<!-- .slide: data-background="/assets/img/why_tests_are_important.gif" -->
+<!-- .slide: data-background="assets/img/why_tests_are_important.gif" -->
 
 ---
 

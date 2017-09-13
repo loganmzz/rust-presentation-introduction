@@ -1,4 +1,4 @@
-<!-- .slide: data-background-video="/assets/videos/rust_born.mp4" data-background-video-loop="true" data-background-video-muted="true" -->
+<!-- .slide: data-background-video="assets/videos/rust_born.mp4" data-background-video-loop="true" data-background-video-muted="true" -->
 
 ---
 
@@ -10,7 +10,7 @@
 
 ---
 
-<!-- .slide: data-background="/assets/img/on_en_a_gros.gif" data-background-size="90%"-->
+<!-- .slide: data-background="assets/img/on_en_a_gros.gif" data-background-size="90%"-->
 
 ---
 

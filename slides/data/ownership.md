@@ -104,7 +104,7 @@ error[E0382]: use of moved value: `events`
 
 ## Ownership
 
-![vec_ownership](assets/img/vec_ownership.png)
+![vec_ownership](assets/img/ownership_events_example.svg) <!-- .element: width="70%" style="background-color:white;" -->
 
 ---
 

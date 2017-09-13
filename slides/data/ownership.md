@@ -135,7 +135,7 @@ fn read_events() {
 }
 
 fn get_value_treasures(treasures: &Vec<Treasure>) {
-    // Can't modify the events here
+    // Can't modify the treasures here
 }
 ```
 

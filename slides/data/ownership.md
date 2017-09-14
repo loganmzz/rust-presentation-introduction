@@ -184,7 +184,7 @@ once at a time
 
 ---
 
-## ownership look like
+## Borrowing look like
 
 > Compile time _read-write lock_ on data (not the code)
 

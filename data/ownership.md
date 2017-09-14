@@ -62,7 +62,7 @@ Segmentation fault
 
 Ensure **only one** active _binding_ to _allocated memory at a time_
 
-_✔️ eliminates data race_  <!-- .element: class="fragment" -->
+_✔️ eliminates double frees, use after free..._  <!-- .element: class="fragment" -->
 
 ---
 
@@ -184,7 +184,7 @@ once at a time
 
 ---
 
-## ownership look like
+## Borrowing look like
 
 > Compile time _read-write lock_ on data (not the code)
 

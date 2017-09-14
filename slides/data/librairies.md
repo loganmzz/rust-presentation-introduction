@@ -108,6 +108,8 @@ How we can parse Wavefront .obj file ?
 
 ### use [nom](https://github.com/Geal/nom) !
 
+Parser combinator framework with zero copy
+
 ```rust
 named!(vertices_geometry<&[u8], Face>, map!(
     sp!( delimited!(tag!("v"), four_float_opt_4th, nom::eol)),

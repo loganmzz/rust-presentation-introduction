@@ -6,7 +6,6 @@
 
 * Little attention paid to safety
 * Poor concurrency support
-* Lack of affordances
 
 ---
 
@@ -17,8 +16,6 @@
 ## What we want
 
 * Modern language (pattern matching, functional ...)
-
-* Efficient 
 
 * No memory management
 

@@ -3,15 +3,13 @@
 
 ---
 
-<p>No safety = <span>mutable data</span><!-- .element: class="fragment" --><span> + more one ref on it</span><!-- .element: class="fragment" -->
+<p><span>Mutable data</span><!-- .element: class="fragment" -->  +  <span>Many ref on it</span><!-- .element: class="fragment" --> = <span> No safety</span><!-- .element: class="fragment" --></p> 
 
 ---
 
-## Garbage collector
+## JVM
 
-![cargo logo](assets/img/gc.png)
-
-_Can't prevent_: data races, iterator invalidation,...</p> <!-- .element class="fragment" -->
+_Can't prevent_ data races, iterator invalidation, ...
 
 ---
 
@@ -51,7 +49,6 @@ Segmentation fault
 
 * ownership 
 * borrowing
-* lifetime
 
 **Check at compile time.**
 <!-- .element: class="fragment" --> 
@@ -192,6 +189,4 @@ once at a time
 
 ## To conclude
 
-<p>Rust code is not just _fast_ because of _no GC_</p>  <!-- .element: class="fragment" -->
-
-**it's more safety !!** <!-- .element: class="fragment big" -->
+<p>It's more <span style="color:orange;"> safety</span> !! </p><!-- .element class="big" -->

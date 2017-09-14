@@ -5,7 +5,7 @@
 | Mio | Iron | Serde | Piston |
 | Tokio | Rocket | Nom | Leaf |
 | Rayon | Nickel | Diesel | Chrono |
-| Crossbeam | | ProtoBuf | |
+| Crossbeam | Gotham | ProtoBuf | |
 
 ---
 
@@ -111,19 +111,20 @@ How we can parse Wavefront .obj file ?
 Parser combinator framework with zero copy
 
 ```rust
+named!(pub four_float_opt_4th< &[u8], (f32, f32, f32, Option<f32>)>, 
+    sp!(
+        tuple!(float, float, float, 
+        opt!(float))
+    )
+);
+
 named!(vertices_geometry<&[u8], Face>, map!(
-    sp!( delimited!(tag!("v"), four_float_opt_4th, nom::eol)),
+    sp!( 
+        delimited!(
+            tag!("v"), 
+            four_float_opt_4th, nom::eol
+        )
+    ), 
     |(x, y, z, w)| Face::new(x, y, z, w)
 ));
-
-
-named!(texture_coords<&[u8], Coord>, map!(
-    sp!( delimited!(tag!("vt"), triple_float_opt_3rd, nom::eol)),
-    |(u, v, w))| TextureCoord::new(u, v, w)
-));
-
-
-named!(pub four_float_opt_4th< &[u8], (f32, f32, f32, Option<f32>)>, 
-    sp!(tuple!(float, float, float, opt!(float)))
-);
 ```

@@ -11,29 +11,6 @@ Note:
 
 ---
 
-## `Drop`
-
-* Java-like `finalize()`
-* Manual deallocation `drop()`
-
-```rust
-struct Person(String);
-impl Drop for Person {
-    fn drop(&mut self) {
-        println!("Goodbye {}", self.0);
-    }
-}
-
-let richard = Person(String::from("RICHARD"));
-drop(richard);
-```
-
-Note:
-* `std::mem::drop` => ownership
-`examples-memory-drop.rs`
-
----
-
 ## Heap ([Box](https://doc.rust-lang.org/std/boxed/struct.Box.html))
 
 Recursive types

@@ -58,6 +58,13 @@ Segmentation fault
 
 ---
 
+## Ownership
+
+Ensure **only one** active _binding_ to _allocated memory at a time_
+
+_✔️ eliminates data race_  <!-- .element: class="fragment" -->
+
+---
 
 ## Ownership
 
@@ -72,6 +79,13 @@ fn transform_events(<span class="fragment highlight-mark">events</span>: Vec<Eve
     // transform_event scope 
 } <span class="fragment" style="color:red;font-size:larger;">◀️ free memory allocation events</span>
 </code></pre> 
+
+
+---
+
+## Ownership
+
+![vec_ownership](assets/img/ownership_events_example.svg) <!-- .element: width="70%" style="background-color:white;" -->
 
 ---
 
@@ -88,6 +102,7 @@ fn generate_events() {
 fn transform_events(events: Vec<Event>) { /* ... */ }
 </code></pre> 
 
+---
 
 <pre><code data-trim data-noescape class="rust"> 
 error[E0382]: use of moved value: `events`
@@ -100,19 +115,6 @@ error[E0382]: use of moved value: `events`
 </code></pre> 
 <!-- .element class="fragment" -->
 
----
-
-## Ownership
-
-![vec_ownership](assets/img/ownership_events_example.svg) <!-- .element: width="70%" style="background-color:white;" -->
-
----
-
-## Ownership
-
-Ensure **only one** active _binding_ to _allocated memory at a time_
-
-_✔️ eliminates data race_  <!-- .element: class="fragment" -->
 
 ---
 

@@ -39,13 +39,7 @@ fn worker_thread_index() {
 
 4. Run `$cargo test`
 
----
-
-## Integration tests
-
-* tests/*.rs
-
-* different _binaries_ for each tests
+By _default_ tests run _concurrently_
 
 ---
 
@@ -71,21 +65,8 @@ pub fn append<K, V>(&mut self, key: K, value: V) where
 }
 ````
 
-[src/header/common/cookie.rs](https://github.com/hyperium/hyper/blob/1059eb349a560a4b9b83181acd9db19d1ef42073/src/header/common/cookie.rs)
+[hyper/src/header/common/cookie.rs](https://github.com/hyperium/hyper/blob/1059eb349a560a4b9b83181acd9db19d1ef42073/src/header/common/cookie.rs)
 
----
-
-## Concurrency
-
-By _default_ tests run _concurrently_
-
-<pre><code class="bash" data-trim data-noescape>
-$ <span class="fragment highlight-mark">RUST_TEST_THREADS=5</span> cargo test   # Run tests with concurrency
-
-...
-
-$ cargo test <span class="fragment highlight-mark">-- --test-threads=5</span>   # Same as above
-</pre></code>
 
 ---
 

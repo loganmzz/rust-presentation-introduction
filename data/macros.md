@@ -11,28 +11,9 @@ Note:
 
 ---
 
-## Defining a macro
-
-``` rust
-macro_rules! example {
-    (x => $e: expr) => (println!("mode X: {}", $e));
-    
-    (y => $e: expr) => (println!("mode Y: {}", $e));
-}
-
-example!(x => 2 + 2); //get mode X: 4
-```
-
-Note:
-* rules (left-part) match against token tree
-* expansion (right-part) generates other tokens (not source code) !
-* valid delimiter: `()`, `{}` or `[]` (for invocation, rules and expansion)
-
----
-
 ## **A**bstract **S**yntax **T**ree
 
-<pre><code data-trim data-noescape class="text">
+<pre><code data-trim data-noescape class="rust">
 macro_rules! new_macro {
     <i class="h3">(</i><i class="h1">x => $e: expr</i><i class="h3">)</i> => <i class="h3">(</i><i class="h2">println!("mode X: {}", $e)</i><i class="h3">)</i>;
 }
@@ -62,22 +43,3 @@ new_macro!<i class="h3">(</i><i class="h4">x => 2 + 2</i><i class="h3">)</i>
 | `ty` | ⇒ type
 | `meta` | ⇒ attribute content (i.e. `#[...]`)
 <!-- .element class="headless compact" -->
-
----
-
-## Pragmatic example
-
-``` rust
-macro_rules! find_min {
-    ($x:expr) => ($x); // only one element
-    
-    ($x:expr, $($y:expr),+) => (
-        std::cmp::min($x, find_min!($($y),+))
-    )
-}
-
-println!("{}", find_min!(5, 8, 9, 10));
-```
-Note:
-* `$(...)*` repetition operator
-* `$(...),+` match one or more expression

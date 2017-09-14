@@ -3,9 +3,9 @@
 | | | |
 | --- | :---: | --- |
 | Memory safety | _without_ | GC |
-| Concurrency | _..._ | Data races |
-| Abstraction | _..._ | Overhead |
-| Control | _..._ | Borring syntax |
+| Concurrency | _without_ | Data races |
+| Abstraction | _without_ | Overhead |
+| Control | _without_ | Borring syntax |
 | | | |
 <!-- .element: class="headless no-border" -->
 

@@ -1,7 +1,7 @@
 ## Cargo workflow
 ![cargo logo](assets/img/cargo_logo.png)
 
-> Cargo is not just a dependency manager, but Rust’s primary workflow tool.
+> Cargo is the Rust primary workflow tool.
 
 ---
 
@@ -62,12 +62,3 @@ Automatically builds crates' documentation released on [crates.io](https://crate
 ## Shared Dependencies
 
 Share dependencies between crates if they depend on the same major version
-
----
-
-## [Cargo extensions](https://github.com/rust-lang/cargo/wiki/Third-party-cargo-subcommands)
-
-Designed to be extensible without having to modify Cargo itself. 
-
-
-`cargo-${command}` present in the user's `$PATH`

@@ -1,21 +1,19 @@
-# Demain j'arrête le café, je me mets au crabe !
+# Tomorrow I stop coffee, I get to crab !
 
-Présentation du langage Rust et de son écosystème.
+Hosted slides are available at : [https://loganmzz.github.io/rust-presentation-introduction/](https://loganmzz.github.io/rust-presentation-introduction/)
 
-Le but étant de faciliter le démarrage sur cette technologie pour des personnes utilisant des langages haut niveau comme Java. Dans cette présentation nous découvrirons:
+Introduction to Rust language and its ecosystem. Goal is to ease starting with Rust for people with knowledge of an high-level language as Java.
 
-* Le Langage (3 piliers)
-  * Productivité : API fonctionnelle, pas de gestion manuelle de la mémoire, typage fort, inférence de type
-  * Performance : Compilation native avec LLVM, ∅GC, langage bas niveau
-  * Sûreté : sûreté de la mémoire, pas d’accès concurrent
-  * Features présentées (et animées !) :
+* Language (3 foundations)
+  * Productivity: functional-style, no manual memory management, strong and infered typing
+  * Performance: native compilation through LLVM, ∅GC, low-level language
+  * Safety : memory safety, no concurrent access
+  * Features
     * struct / trait / generics
-    * ownership / borrowing / lifetime
-    * memory guarantees : Box / Rc / Cell / Arc
+    * ownership / borrowing
+    * memory guarantees : Box / Arc
     * macro
-* L'Écosystème :
+* Ecosystem :
   * IDE, tests, debugger, RLS (?)
-  * Build et packages manager (Cargo)
-  * Librairies phares (Iron, Mio, Nom, Piston)
-
-Puis nous terminerons sur une démo multi plateforme avec un backend tournant sur les différentes plateformes: Windows / Linux / ARM, puis un frontend en webassembly avec rust.
+  * Build et package manager (Cargo)
+  * Librairies (Rayon, Rocket, Nom)

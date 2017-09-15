@@ -22,8 +22,6 @@ Exception in thread "main" java.lang.NullPointerException
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException
 ```
 
----
-
 ## C/C++ _Runtime errors_
 
 ```

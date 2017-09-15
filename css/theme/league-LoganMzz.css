@@ -349,7 +349,9 @@ i.h4 {
   box-shadow: none; }
 
 .licences {
-  position: relative;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
   max-width: 176px;
   z-index: 30; }
 

@@ -1,14 +1,14 @@
 #[derive(Debug)]
-struct Person {
+pub struct Person {
     name: String,
 }
 
 impl Person {
-    fn new(name: &str) -> Person {
+    pub fn new(name: &str) -> Person {
         Person { name: String::from(name) }
     }
 
-    fn name(&self) -> &String {
+    pub fn name(&self) -> &String {
         &self.name
     }
 }

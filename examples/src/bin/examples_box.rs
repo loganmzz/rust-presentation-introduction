@@ -1,16 +1,37 @@
-mod examples_struct;
-use examples_struct::{Data, Task};
+#[derive(Debug)]
+struct Person {
+    name: String,
+}
+
+impl Person {
+    fn new(name: &str) -> Person {
+        Person { name: String::from(name) }
+    }
+
+    fn name(&self) -> &String {
+        &self.name
+    }
+}
+
+impl Drop for Person {
+    fn drop(&mut self) {
+        println!("Drop of {:?}", self);
+    }
+}
+
 
 fn main() {
-    let stack = Task::new(0, Data(0, 0));
-    println!("stack={:?}", stack.data());
+    let stack = Person::new("stack");
+    println!("stack={:?}", stack.name());
 
-    let boxed = Box::new(Task::new(1, Data(0, 1)));
-    println!("boxed={:?}", boxed.data());
+    let boxed = Box::new(Person::new("boxed"));
+    println!("boxed={:?}", boxed.name());
 
-    fn consume(boxed: Box<Task>) {
-        println!("boxed={:?}", boxed.data());
+    fn consume(boxed: Box<Person>) {
+        println!("boxed={:?}", boxed.name());
+        println!("-- End of consume --");
     }
     consume(boxed);
     // consume(boxed);
+    println!("-- End of main --");
 }

@@ -14,19 +14,24 @@ Note:
 ## Heap ([Box](https://doc.rust-lang.org/std/boxed/struct.Box.html))
 
 ```rust
-let stack = Task::new(0, Data(0, 0));
-println!("stack={:?}", stack.data());
+let stack = Person::new("stack");
+println!("stack={:?}", stack.name());
 
-let boxed = Box::new(Task::new(1, Data(0, 1)));
-println!("boxed={:?}", boxed.data());
+let boxed = Box::new(Person::new("boxed"));
+println!("boxed={:?}", boxed.name());
 ```
 
 ```rust
-fn consume(boxed: Box<Task>) {
-    println!("boxed={:?}", boxed.data());
-}
+fn consume(boxed: Box<Person>) {
+    // Free box here
+} 
 consume(boxed);
 consume(boxed); // use of moved value: `boxed`
+```
+<!-- .element class="fragment" -->
+
+```rust
+// Free stack here
 ```
 <!-- .element class="fragment" -->
 
@@ -37,21 +42,35 @@ Boxes works transparently as default reference
 
 ---
 
-## Shared reference ([Rc](https://doc.rust-lang.org/std/rc/struct.Rc.html))
+## Shared reference ([Arc](https://doc.rust-lang.org/std/sync/struct.Arc.html))
 
 ```rust
-let robert = Arc::from(Person(String::from("ROBERT")));
-say_hello(robert.clone()); // Hello ROBERT
+use std::sync::Arc;
+
+let stack = Person::new("stack");
+println!("stack={:?}", stack.name());
+
+let refc0 = Arc::new(Person::new("refctr"));
+println!("refc0={:?}", refc0.name());
 ```
+
+```rust
+fn consume(rfctr: Arc<Person>) { ... }
+consume(rfctr.clone());
+consume(rfctr.clone());
+```
+<!-- .element class="fragment" -->
+
+```rust
+// Free stack & rfctr here
+```
+<!-- .element class="fragment" -->
+
+[examples_arc.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples_arc.rs)
 
 Note:
 * **A**tomic **R**eference **C**ounter
 * `std::sync::Arc` => associated fonctions VS target reference methods
-* `std::sync::Weak`
-    * no direct access to target reference methods
-    * break reference cycles
-* `examples-memory-arc.rs`
-
 
 ---
 

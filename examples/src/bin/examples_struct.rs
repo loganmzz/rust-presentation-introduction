@@ -1,18 +1,18 @@
 #[derive(Clone, Debug)]
-struct Data(i32, i32);
+pub struct Data(pub i32, pub i32);
 
 #[derive(Clone, Debug)]
-struct Task {
+pub struct Task {
     id: i64,
     data: Data,
 }
 
 impl Task {
-    fn new(id: i64, data: Data) -> Task {
+    pub fn new(id: i64, data: Data) -> Task {
         Task { id, data }
     }
 
-    fn data(&self) -> &Data {
+    pub fn data(&self) -> &Data {
         &self.data
     }
 }

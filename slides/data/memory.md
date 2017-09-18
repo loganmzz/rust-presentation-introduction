@@ -13,40 +13,35 @@ Note:
 
 ## Heap ([Box](https://doc.rust-lang.org/std/boxed/struct.Box.html))
 
-Recursive types
-
 ```rust
-enum List<T> {
-    Nil,
-    Cons(T, Box<List<T>>),
-}
+let stack = Task::new(0, Data(0, 0));
+println!("stack={:?}", stack.data());
+
+let boxed = Box::new(Task::new(1, Data(0, 1)));
+println!("boxed={:?}", boxed.data());
 ```
 
-Unknown size
-
 ```rust
-trait Foo: Debug {}
-fn bar(foo: Box<Foo>) {
-    println!("{:?}", foo);
+fn consume(boxed: Box<Task>) {
+    println!("boxed={:?}", boxed.data());
 }
+consume(boxed);
+consume(boxed); // use of moved value: `boxed`
 ```
+<!-- .element class="fragment" -->
+
+[examples_box.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples_box.rs)
 
 Note:
-`examples-memory-box.rs`
+Boxes works transparently as default reference
 
 ---
 
-## Shared reference ([Arc](https://doc.rust-lang.org/std/sync/struct.Arc.html))
+## Shared reference ([Rc](https://doc.rust-lang.org/std/rc/struct.Rc.html))
 
 ```rust
 let robert = Arc::from(Person(String::from("ROBERT")));
 say_hello(robert.clone()); // Hello ROBERT
-
-let weak = Arc::downgrade(&robert);
-try_say_hello(weak.clone()); // Hello ROBERT
-
-drop(robert);
-try_say_hello(weak); // Person is gone
 ```
 
 Note:

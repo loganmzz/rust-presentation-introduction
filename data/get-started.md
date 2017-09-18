@@ -33,7 +33,7 @@ impl Task {
 }
 ```
 
-[examples-struct.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples-struct.rs)
+[examples_struct.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples_struct.rs)
 
 Note:
 * `struct` => data container
@@ -66,7 +66,7 @@ impl Person {
 }
 ```
 
-[examples-enum.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples-enum.rs)
+[examples_enum.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples_enum.rs)
 
 Note:
 * Finite variant set
@@ -88,7 +88,7 @@ impl std::ops::Add for Data {
 println!("{:?}", Data(1,2) + Data(4,8));
 ```
 
-[examples-trait.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples-trait.rs)
+[examples_trait.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples_trait.rs)
 
 Note:
 * (= Java) no attributes
@@ -122,7 +122,7 @@ impl Adaptable<Distance<Km>> for Distance<Mi> {
 }
 ```
 
-[examples-generic.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples-generic.rs)
+[examples_generic.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples_generic.rs)
 
 Note:
 * C++-like template
@@ -152,4 +152,4 @@ impl< DT , DS,S >  Adaptable<Speed<DT,S>>  for  Speed<DS,S>  where
 }
 ```
 
-[examples-generic.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples-generic.rs)
+[examples_generic.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples_generic.rs)

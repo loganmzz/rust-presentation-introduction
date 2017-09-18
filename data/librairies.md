@@ -39,14 +39,14 @@ fn mul_par(lhs: &Matrix, rhs: &Matrix,
 🚀 [Rocket](https://rocket.rs/)
 
 ```rust
-#![feature(plugin)]
-#![plugin(rocket_codegen)]
-
-extern crate rocket;
-
 #[get("/")]
-fn index() -> &'static str {
-    "Hello, world!"
+fn index() -> Json {
+    Json(
+        json!({
+            "subject": "rust",
+            "hall": 3,
+        })
+    )
 }
 
 fn main() {
@@ -60,7 +60,7 @@ fn main() {
 
 ### Librairies - Serialisation
 
-How we can parse Wavefront .obj file ?
+How we can parse _Wavefront.obj_ file ?
 
 ```rust
         #File exported by ZBrush version 3.5

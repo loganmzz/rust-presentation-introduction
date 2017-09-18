@@ -22,8 +22,6 @@ Exception in thread "main" java.lang.NullPointerException
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException
 ```
 
----
-
 ## C/C++ _Runtime errors_
 
 ```
@@ -97,9 +95,7 @@ fn generate_events() {
 }
 
 fn transform_events(events: Vec<Event>) { /* ... */ }
-</code></pre> 
-
----
+</code></pre>
 
 <pre><code data-trim data-noescape class="rust"> 
 error[E0382]: use of moved value: `events`

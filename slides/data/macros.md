@@ -2,12 +2,9 @@
 
 <table class="no-border center-mid">
 <tr class="fragment"> <td>**functions**</td> <td>abstract over</td> <td>_variables_</td> </tr>
-<tr class="fragment"> <td>**generics**</td> <td>...</td> <td>_types_</td>
-<tr class="fragment"> <td>**macros**</td> <td>...</td> <td>_syntax tree_</td>
+<tr class="fragment"> <td>**generics**</td> <td>abstract over</td> <td>_types_</td>
+<tr class="fragment"> <td>**macros**</td> <td>abstract over</td> <td>_syntax tree_</td>
 </table>
-
-Note:
-* AST-based ⇒ both call and definition must be parsable 
 
 ---
 
@@ -25,6 +22,9 @@ new_macro!<i class="h3">(</i><i class="h4">x => 2 + 2</i><i class="h3">)</i>
 <i class="h2">expansion</i> generates new tokens (not code !)
 
 <i class="h3">delimiter</i> can be `()`, `{}`, `[]` for <i class="h4">invocation</i>, <i class="h1">rules</i>, and <i class="h2">expansion</i>
+
+Note:
+* AST-based ⇒ both call and definition must be parsable 
 
 ---
 

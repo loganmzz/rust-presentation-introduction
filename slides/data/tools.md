@@ -10,7 +10,7 @@
 * [Vim](https://github.com/rust-lang/rust.vim)
 * ...
 
-[Racer](https://github.com/racer-rust/racer) provide code completion
+[Rust Language Server](https://github.com/rust-lang-nursery/rls): completion, refactor ...
 
 Note:
 * VS Code:

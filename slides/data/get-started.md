@@ -108,10 +108,9 @@ fn main() {
   let tasks_queue = retrieve_tasks();
 
   tasks_queue.into_iter()
-        .map(|(t, o)| compute_operation(t.data, o)) 
-        .for_each(|res| {
-            println!("Task give {}", res.unwrap_or("Error".to_string()))
-        });
+             .map(|(t, o)|   compute_operation(t.data, o))
+             .map(|res|      res.unwrap_or(String::from("Error")))
+             .for_each(|res| println!("Task give {}", res));
 }
 ```
 

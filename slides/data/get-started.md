@@ -118,7 +118,7 @@ fn main() {
 
 ---
 
-## Trait
+## Structures (`struct`)
 
 ```rust
 #[derive(Clone, Debug)]
@@ -134,8 +134,8 @@ impl Task {
         Task { id, data }
     }
 
-    fn data(&self) -> &Data {
-        &self.data
+    fn data(self) -> Data {
+        self.data
     }
 }
 ```
@@ -213,17 +213,17 @@ struct Km; struct Mi;
 struct Distance<T>(u32, T);
 
 trait Adaptable<T> {
-   fn adapt(&self) -> T;
+   fn adapt(self) -> T;
 }
 
 impl Adaptable<Distance<Mi>> for Distance<Km> {
-   fn adapt(&self) -> Distance<Mi> {
+   fn adapt(self) -> Distance<Mi> {
       Distance(self.0 * 13 / 21, Mi)
    }
 }
 
 impl Adaptable<Distance<Km>> for Distance<Mi> {
-   fn adapt(&self) -> Distance<Km> {
+   fn adapt(self) -> Distance<Km> {
       Distance(self.0 * 21 / 13, Km)
    }
 }
@@ -252,7 +252,7 @@ struct Speed<D, T=Hours>(Distance<D>, T);
 impl< DT , DS,S >  Adaptable<Speed<DT,S>>  for  Speed<DS,S>  where
    Distance<DS>: Adaptable<Distance<DT>>,
    S: Clone {
-        fn adapt(&self) -> Speed<DT,S> {
+        fn adapt(self) -> Speed<DT,S> {
             Speed(self.0.adapt(), self.1.clone())
         }
 }

@@ -52,7 +52,8 @@ fn retrieve_tasks() -> Vec< (Task, Operations) > {
 ## Pattern matching for operations
 
 ```rust
-fn compute_operation(data: i32, operation: Operations) -> Result<String, OperationsError> {
+fn compute_operation(data: i32, operation: Operations)
+    -> Result<String, OperationsError> {
     
     return match operation {
         Operations::ADD => add_operation(data),

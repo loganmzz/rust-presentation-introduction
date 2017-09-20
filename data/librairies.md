@@ -2,10 +2,10 @@
 
 | Asynchronous | Web | Serialization | Miscellaneous |
 | ---------- | --- | ------------- | ------ |
-| Mio | Iron | Serde | Piston |
-| Tokio | Rocket | Nom | Leaf |
-| Rayon | Nickel | Diesel | Chrono |
-| Crossbeam | Gotham | ProtoBuf | |
+| [Mio](https://crates.io/crates/mio) | [Iron](https://crates.io/crates/iron) | [Serde](https://crates.io/crates/serde) | [Piston](https://crates.io/crates/piston) |
+| [Tokio](https://crates.io/crates/tokio-core) | [Rocket](https://crates.io/crates/rocket) | [Nom](https://crates.io/crates/nom) | [Leaf](https://crates.io/crates/leaf) |
+| [Rayon](https://crates.io/crates/rayon) | [Nickel](https://crates.io/crates/nickel) | [Diesel](https://crates.io/crates/diesel) | [Chrono](https://crates.io/crates/chrono) |
+| [Crossbeam](https://crates.io/crates/crossbeam) | [Gotham](https://crates.io/crates/gotham) | [ProtoBuf](https://crates.io/crates/protobuf) | |
 
 ---
 

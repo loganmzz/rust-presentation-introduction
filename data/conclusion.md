@@ -27,7 +27,9 @@
 
 * [Most loved language](https://insights.stackoverflow.com/survey/2017#most-loved-dreaded-and-wanted) on Stack Overflow
 
-* [18th](https://blog.sourced.tech/post/language_migrations/#most-popular-languages-on-github) most popular language on GitHub 
+* [18th](https://blog.sourced.tech/post/language_migrations/#most-popular-languages-on-github) most popular language on GitHub
+
+* _MKTD #5 (Go / Rust) on 24 November_ ([Meetup](https://www.meetup.com/fr-FR/Monkey-Tech-Days/events/237545492/))
 
 ---
 

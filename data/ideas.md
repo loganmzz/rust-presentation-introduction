@@ -6,7 +6,7 @@
 
 * Little attention paid to safety
 * Poor concurrency support
-* growing old syntax
+* Growing old syntax
 
 ---
 

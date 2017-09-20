@@ -11,6 +11,14 @@
 
 ---
 
+## Actually used for 
+
+* System development, low level
+* Video game, Web assembly
+* Embedded
+
+---
+
 ## Rust community
 
 * 11,023 crates on crates.io 

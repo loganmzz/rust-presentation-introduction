@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -uf -o pipefail
+set -u -o pipefail
 
 ## Settings
 DEPLOY_BRANCH="gh-pages"
@@ -41,8 +41,6 @@ function fn_main {
     ## Move content
     (
         cd "${ROOT_WORK}/slides"                                         \
-        && echo "... copy .gitignore"                                    \
-        && touch "${ROOT_DEPLOY}"/.gitignore                             \
         && fn_copy_into .           assets data js lib plugin index.html \
         && fn_copy_into ./css       print reveal.css                     \
         && fn_copy_into ./css/theme league-LoganMzz.css

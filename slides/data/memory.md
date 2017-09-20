@@ -74,48 +74,28 @@ Note:
 
 ---
 
-## Light process (`thread`)
-
-```rust
-fn computation() -> i64 {
-    42 * 314
-}
-
-let handle = thread::spawn(computation);
-
-
-let result = handle.join().expect("Error during computation");
-println!("Result: {}", result);
-
-```
-
-Note:
-`examples-thread.rs`
-
----
-
-## Transfer ([Send](https://doc.rust-lang.org/std/marker/trait.Send.html))
-## Share ([Sync](https://doc.rust-lang.org/std/marker/trait.Sync.html))
+## Thread & Transfer ([Send](https://doc.rust-lang.org/std/marker/trait.Send.html))
 
 ```rust
 let reference = Arc::new(String::from("A shared string"));
 
-let handles = (0..2)
-           .map(|_| reference.clone())
-           .map(|shared|
-                spawn(move ||
-                    println!("{:?} => {:?}", current().id(), shared))
-            )
-            .collect();
-                
+fn format_with_thread(reference: Arc<String>) -> JoinHandle<String> {
+   spawn(move || format!("{:?} => {:?}", current().id(), reference))
+}
+
+let handles: Vec<_> = (0..2).map(|_| reference.clone())
+                            .map(format_with_thread)
+                            .collect();
+
 for handle in handles {
-    handle.join().unwrap();
+   println!("{}", handle.join().unwrap());
 }
 ```
 
+[examples_thread.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples_thread.rs)
+
 Note:
-* `examples-thread-send-async.rs`
-* Automatic implementations based on attributes
+`Send`: automatic implementations based on attributes
 
 ---
 

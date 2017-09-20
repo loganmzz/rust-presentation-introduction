@@ -11,6 +11,8 @@ import static java.lang.String.format;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
+import static com.github.loganmzz.matrix.MatrixMulBenchmark.MATRIX_SIZE;
+
 public class MatrixTest {
 
 	@Rule
@@ -45,9 +47,9 @@ public class MatrixTest {
 
 	@Test
 	public void defaultMatrixShouldBeFullOfZeroes() {
-		Matrix m = new Matrix(4096, 4096);
-		for (int col = 0; col < 4096; col++) {
-			for (int row = 0; row < 4096; row++) {
+		Matrix m = new Matrix(MATRIX_SIZE, MATRIX_SIZE);
+		for (int col = 0; col < MATRIX_SIZE; col++) {
+			for (int row = 0; row < MATRIX_SIZE; row++) {
 				collector.checkThat(format("(%d,%d)", col, row), m.get(col, row), equalTo(0));
 			}
 		}
@@ -55,9 +57,9 @@ public class MatrixTest {
 
 	@Test
 	public void identifyMatrixShouldBeFullOfZeroesButOneInDiagonal() {
-		Matrix m = Matrix.identity(4096);
-		for (int col = 0; col < 4096; col++) {
-			for (int row = 0; row < 4096; row++) {
+		Matrix m = Matrix.identity(MATRIX_SIZE);
+		for (int col = 0; col < MATRIX_SIZE; col++) {
+			for (int row = 0; row < MATRIX_SIZE; row++) {
 				collector.checkThat(format("(%d,%d)", col, row), m.get(col, row), equalTo(col != row ? 0 : 1));
 			}
 		}
@@ -65,13 +67,11 @@ public class MatrixTest {
 
 	@Test
 	public void mulAndMulParShouldGiveBothEquivalentMatrices() {
-		Matrix m = loadMatrix(64);
+		Matrix m = loadMatrix(MATRIX_SIZE);
 
 		Matrix mul = m.mulSeq(m);
 		Matrix mulPar = m.mulPar(m);
 
 		assertEquals(mul, mulPar);
 	}
-
-
 }

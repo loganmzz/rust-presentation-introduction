@@ -1,7 +1,6 @@
 package com.github.loganmzz.matrix;
 
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 
@@ -9,7 +8,7 @@ import static java.lang.String.format;
 
 public class Matrix {
 
-	private static final int MUL_PAR_THREHOLD = 4_096;
+	private static final int MUL_PAR_THREHOLD = 32768;
 
 	private int[] data;
 	private int cols;
@@ -102,10 +101,10 @@ public class Matrix {
 					setForMul(lhs, rhs, i);
 				}
 			} else {
-				int split = index + length / 2;
+				int split = length / 2;
 				invokeAll(
-						new MulParRecAction(lhs, rhs, index, split  - index),
-						new MulParRecAction(lhs, rhs, split, length - split)
+						new MulParRecAction(lhs, rhs, index + 0    , split  - 0),
+						new MulParRecAction(lhs, rhs, index + split, length - split)
 				);
 			}
 		}

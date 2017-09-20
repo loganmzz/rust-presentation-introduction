@@ -10,7 +10,7 @@ fn load_4096() {
     assert_eq!(size, m.rows());
     for col in 0..m.cols() {
         for row in 0..m.rows() {
-            assert_eq!(col as u32, m[(col, row)], "at ({}, {})", col, row);
+            assert_eq!(col as i32, m[(col, row)], "at ({}, {})", col, row);
         }
     }
 }
@@ -20,7 +20,7 @@ fn assert_sum_matrix<F>(size: usize, op: F) where F: FnOnce(&Matrix, &Matrix) ->
     let m = op(&base, &base);
     for col in 0..m.cols() {
         for row in 0..m.rows() {
-            assert_eq!((col * 2) as u32, m[(col, row)], "at ({}, {})", col, row);
+            assert_eq!((col * 2) as i32, m[(col, row)], "at ({}, {})", col, row);
         }
     }
 }
@@ -35,7 +35,7 @@ fn add_seq_4096() {
     assert_sum_matrix(4096, |rhs,lhs| rhs + lhs);
 }
 
-fn assert_matrix_eq_vec(actual: Matrix, expected: Vec<Vec<u32>>) {
+fn assert_matrix_eq_vec(actual: Matrix, expected: Vec<Vec<i32>>) {
     assert_eq!(Matrix::from_vec(expected), actual);
 }
 
@@ -43,13 +43,13 @@ fn assert_matrix_eq(actual: Matrix, expected: Matrix) {
     assert_eq!(expected, actual);
 }
 
-fn m(data: u32) -> Matrix {
+fn m(data: i32) -> Matrix {
     let mut m = Matrix::new(1, 1);
     m[(0, 0)] = data;
     m
 }
 
-fn square(d00: u32, d10: u32, d01: u32, d11: u32) -> Matrix {
+fn square(d00: i32, d10: i32, d01: i32, d11: i32) -> Matrix {
     Matrix::from_vec(vec!(
         vec!(d00, d10),
         vec!(d01, d11)

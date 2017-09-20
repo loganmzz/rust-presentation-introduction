@@ -37,12 +37,19 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
+@Warmup(iterations = 5)
+@Measurement(iterations = 10)
+@Threads(1)
+@Fork(1)
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
 public class MatrixMulBenchmark {
 
 
-	static final int MATRIX_SIZE = 4096;
+	static final int MATRIX_SIZE = 512;
 	static final Matrix matrix = new Matrix(MATRIX_SIZE, MATRIX_SIZE);
 	static {
 		int index = 0;
@@ -64,6 +71,8 @@ public class MatrixMulBenchmark {
 	}
 
 	public static void main(String... args) throws RunnerException {
+		System.out.printf("ForkJoinPool.parallelism=%d%n", ForkJoinPool.getCommonPoolParallelism());
+
 		Options options = new OptionsBuilder()
 				.include(MatrixMulBenchmark.class.getSimpleName())
 				.warmupIterations(5)

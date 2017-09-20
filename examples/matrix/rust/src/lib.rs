@@ -1,8 +1,10 @@
 extern crate rayon;
 
+const MUL_PAR_THREHOLD: usize = 32768;
+
 #[derive(Clone,PartialEq,Eq)]
 pub struct Matrix {
-    data: Vec<u32>,
+    data: Vec<i32>,
     cols: usize,
     rows: usize,
 }
@@ -21,7 +23,7 @@ impl Matrix {
         m
     }
 
-    pub fn from_vec(data: Vec<Vec<u32>>) -> Matrix {
+    pub fn from_vec(data: Vec<Vec<i32>>) -> Matrix {
         let rows = data.len();
         if rows == 0 {
             panic!("Matrix must contain at least one row");
@@ -62,15 +64,15 @@ impl Matrix {
 }
 
 impl std::ops::Index<(usize,usize)> for Matrix {
-    type Output = u32;
+    type Output = i32;
 
-    fn index(&self, coord: (usize,usize)) -> &u32 {
+    fn index(&self, coord: (usize,usize)) -> &i32 {
         &self.data[self.to_index(coord)]
     }
 }
 
 impl std::ops::IndexMut<(usize,usize)> for Matrix {
-    fn index_mut(&mut self, coord: (usize,usize)) -> &mut u32 {
+    fn index_mut(&mut self, coord: (usize,usize)) -> &mut i32 {
         let index = self.to_index(coord);
         self.data.index_mut(index)
     }
@@ -97,13 +99,13 @@ impl<'a, 'b> std::ops::Add<&'b Matrix> for &'a Matrix {
 }
 
 impl Matrix {
-    fn add_seq(lhs: &[u32], rhs: &[u32], index: usize, data: &mut [u32]) {
+    fn add_seq(lhs: &[i32], rhs: &[i32], index: usize, data: &mut [i32]) {
         for i in 0..data.len() {
             data[i] = lhs[index+i] + rhs[index+i]
         }
     }
 
-    fn add_par_iter(lhs: &[u32], rhs: &[u32], index: usize, data: &mut [u32]) {
+    fn add_par_iter(lhs: &[i32], rhs: &[i32], index: usize, data: &mut [i32]) {
         if data.len() <= 4*1024 {
             Self::add_seq(lhs, rhs, index, data);
         } else {
@@ -146,19 +148,19 @@ impl<'a, 'b> std::ops::Mul<&'b Matrix> for &'a Matrix {
 
 impl Matrix {
 
-    fn mul_cell(lhs: &Matrix, rhs: &Matrix, index: usize) -> u32 {
+    fn mul_cell(lhs: &Matrix, rhs: &Matrix, index: usize) -> i32 {
         let (col, row) = Matrix::from_index(rhs.cols(), index);
         (0..lhs.cols()).map(|i| lhs[(i, row)] * rhs[(col, i)]).sum()
     }
 
-    fn mul_cells(lhs: &Matrix, rhs: &Matrix, index: usize, data: &mut [u32]) {
+    fn mul_cells(lhs: &Matrix, rhs: &Matrix, index: usize, data: &mut [i32]) {
         for i in 0..data.len() {
             data[i] = Self::mul_cell(lhs, rhs, index + i);
         }
     }
 
-    fn mul_par_cells(lhs: &Matrix, rhs: &Matrix, index: usize, data: &mut [u32]) {
-        if data.len() > 4096 {
+    fn mul_par_cells(lhs: &Matrix, rhs: &Matrix, index: usize, data: &mut [i32]) {
+        if data.len() > MUL_PAR_THREHOLD {
             let split = data.len() / 2;
             let (head, tail) = data.split_at_mut(split);
             rayon::join(|| Self::mul_par_cells(lhs, rhs, index        , head),

@@ -12,6 +12,8 @@ import static com.github.loganmzz.matrix.MatrixTest.square;
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 
+import static com.github.loganmzz.matrix.MatrixMulBenchmark.MATRIX_SIZE;
+
 @RunWith(Parameterized.class)
 public class MatrixMulTest {
 
@@ -40,15 +42,15 @@ public class MatrixMulTest {
 
 	@Test
 	public void mulByIdentityShouldGiveEquivalentMatrix() {
-		Matrix m = loadMatrix(64);
-		Matrix i = Matrix.identity(64);
+		Matrix m = loadMatrix(MATRIX_SIZE);
+		Matrix i = Matrix.identity(MATRIX_SIZE);
 		assertEquals(m, fn.apply(m, i));
 	}
 
 	@Test
 	public void mulFromIdentityShouldGiveEquivalentMatrix() {
-		Matrix m = loadMatrix(64);
-		Matrix i = Matrix.identity(64);
+		Matrix m = loadMatrix(MATRIX_SIZE);
+		Matrix i = Matrix.identity(MATRIX_SIZE);
 		assertEquals(m, fn.apply(i, m));
 	}
 }

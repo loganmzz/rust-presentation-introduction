@@ -74,63 +74,38 @@ Note:
 
 ---
 
-## Light process (`thread`)
-
-```rust
-fn computation() -> i64 {
-    42 * 314
-}
-
-let handle = thread::spawn(computation);
-
-
-let result = handle.join().expect("Error during computation");
-println!("Result: {}", result);
-
-```
-
-Note:
-`examples-thread.rs`
-
----
-
-## Transfer ([Send](https://doc.rust-lang.org/std/marker/trait.Send.html))
-## Share ([Sync](https://doc.rust-lang.org/std/marker/trait.Sync.html))
+## Thread & Transfer ([Send](https://doc.rust-lang.org/std/marker/trait.Send.html))
 
 ```rust
 let reference = Arc::new(String::from("A shared string"));
 
-let handles = (0..2)
-           .map(|_| reference.clone())
-           .map(|shared|
-                spawn(move ||
-                    println!("{:?} => {:?}", current().id(), shared))
-            )
-            .collect();
-                
+fn format_with_thread(reference: Arc<String>) -> JoinHandle<String> {
+   spawn(move || format!("{:?} => {:?}", current().id(), reference))
+}
+
+let handles: Vec<_> = (0..2).map(|_| reference.clone())
+                            .map(format_with_thread)
+                            .collect();
+
 for handle in handles {
-    handle.join().unwrap();
+   println!("{}", handle.join().unwrap());
 }
 ```
 
+[examples_thread.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples_thread.rs)
+
 Note:
-* `examples-thread-send-async.rs`
-* Automatic implementations based on attributes
+`Send`: automatic implementations based on attributes
 
 ---
 
 ## Data exchange ([channel](https://doc.rust-lang.org/std/sync/mpsc/fn.channel.html))
 
-`1 Receiver` and `1..N Sender`
-
 ```rust
-let (tx, rx) = mpsc::channel();
-let tx2 = tx.clone();
+let (tx1, rx) = mpsc::channel();
+let tx2 = tx1.clone();
 
-thread::spawn(move || {
-    let mut scores = vec![1, 2];
-    tx.send(scores);
-});
+thread::spawn(move || tx1.send(vec![1, 2]));
 thread::spawn(move || tx2.send(vec![3, 4]));
 
 for scores in rx {
@@ -138,10 +113,16 @@ for scores in rx {
 }
 ```
 
+[examples_channel.rs](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/examples_channel.rs)
+
 ![go_die](assets/img/gopher_ahah.png)
 <!-- .element class="fragment fade-up" -->
 
-<!-- .element style="margin-top: -20px" -->
+<!-- .element style="margin-top: 30px" -->
+
+
+Note:
+N `Sender` / 1 `Receiver`
 
 ---
 

@@ -4,14 +4,121 @@
 
 ## First code
 
-* Basic syntax
-* Higher-order function
-* Pattern matching
-* Option / Result
+---
+
+## Tasks queue processing
+
+![task queue schema](assets/img/tasks_processing_schema.jpg)
 
 ---
 
-## Structures (`struct`)
+## Task Modelisation
+
+```rust
+struct Task {
+    id: i64,
+    data: i32,
+}
+
+enum Operations {
+    ADD,
+    MUL,
+    DIV
+}
+
+==> ( Task{ id: 1, data: 1}, Operations::ADD )
+```
+
+---
+
+## Construct tasks queue
+
+```rust
+
+fn retrieve_tasks() -> Vec< (Task, Operations) > {
+    
+    vec![
+        ( Task{ id: 1, data: 1}, Operations::ADD ),
+        ( Task{ id: 2, data: 2}, Operations::MUL ),
+        ( Task{ id: 3, data: 2}, Operations::MUL ),
+        ( Task{ id: 4, data: 30}, Operations::DIV ),
+    ]
+}
+
+```
+
+---
+
+## Pattern matching for operations
+
+```rust
+fn compute_operation(data: i32, operation: Operations) -> Result<String, OperationsError> {
+    
+    return match operation {
+        Operations::ADD => add_operation(data),
+        
+        Operations::MUL => mul_operation(data),
+        
+        Operations::DIV => div_operation(data),
+    }
+}
+```
+
+---
+
+## Pattern matching for operations
+
+```rust
+fn add_operation(data: i32) -> Result<String, OperationsError> {
+    let compute = data + 10;
+    return Ok(String::from(compute.to_string()))
+}
+
+
+fn mul_operation(data: i32) -> Result<String, OperationsError> {
+    let compute = data * 10;
+    return Ok(String::from(compute.to_string()))
+}
+
+
+fn div_operation(data: i32) -> Result<String, OperationsError> {
+    return Err(OperationsError::OVERFLOW)
+}
+```
+
+---
+
+## Errors modelisation
+
+```rust
+enum OperationsError {
+    UNKNOW_OPERATION,
+    OVERFLOW,
+    PARSING,
+}
+```
+
+---
+
+## main
+
+```rust
+fn main() {
+  let tasks_queue = retrieve_tasks();
+
+  tasks_queue.into_iter()
+        .map(|(t, o)| compute_operation(t.data, o)) 
+        .for_each(|res| {
+            println!("Task give {}", res.unwrap_or("Error".to_string()))
+        });
+}
+```
+
+[full code](https://github.com/loganmzz/rust-presentation-introduction/blob/master/examples/src/bin/getting_startv3.rs)
+
+---
+
+## Trait
 
 ```rust
 #[derive(Clone, Debug)]
@@ -145,10 +252,9 @@ struct Speed<D, T=Hours>(Distance<D>, T);
 impl< DT , DS,S >  Adaptable<Speed<DT,S>>  for  Speed<DS,S>  where
    Distance<DS>: Adaptable<Distance<DT>>,
    S: Clone {
-
-   fn adapt(&self) -> Speed<DT,S> {
-      Speed(self.0.adapt(), self.1.clone())
-   }
+        fn adapt(&self) -> Speed<DT,S> {
+            Speed(self.0.adapt(), self.1.clone())
+        }
 }
 ```
 

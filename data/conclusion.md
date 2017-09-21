@@ -5,17 +5,19 @@
 | Memory safety | _without_ | GC |
 | Concurrency | _without_ | Data races |
 | Abstraction | _without_ | Overhead |
-| Control | _without_ | Borring syntax |
+| Control | _without_ | Boring syntax |
 | | | |
 <!-- .element: class="headless no-border" -->
 
 ---
 
-## Actually used for 
+## Purpose
 
 * System development, low level
 * Video game, Web assembly
 * Embedded
+
+Shipped in Firefox (start with version 48) <!-- .element: style="margin-top:5%" -->
 
 ---
 

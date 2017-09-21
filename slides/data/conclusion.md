@@ -11,11 +11,13 @@
 
 ---
 
-## Actually used for 
+## Purpose
 
 * System development, low level
 * Video game, Web assembly
 * Embedded
+
+Shipped in Firefox (start with version 48) <!-- .element: style="margin-top:5%" -->
 
 ---
 

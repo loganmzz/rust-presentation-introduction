@@ -5,7 +5,7 @@
 | Memory safety | _without_ | GC |
 | Concurrency | _without_ | Data races |
 | Abstraction | _without_ | Overhead |
-| Control | _without_ | Borring syntax |
+| Control | _without_ | Boring syntax |
 | | | |
 <!-- .element: class="headless no-border" -->
 

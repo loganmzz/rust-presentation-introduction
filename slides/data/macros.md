@@ -10,7 +10,7 @@
 
 ## **A**bstract **S**yntax **T**ree
 
-<pre><code data-trim data-noescape class="rust">
+<pre><code data-trim data-noescape class="text">
 macro_rules! new_macro {
     <i class="h3">(</i><i class="h1">x => $e: expr</i><i class="h3">)</i> => <i class="h3">(</i><i class="h2">println!("mode X: {}", $e)</i><i class="h3">)</i>;
 }

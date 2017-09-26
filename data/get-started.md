@@ -55,7 +55,7 @@ fn retrieve_tasks() -> Vec< (Task, Operations) > {
 fn compute_operation(data: i32, operation: Operations)
     -> Result<String, OperationsError> {
     
-    return match operation {
+    match operation {
         Operations::ADD => add_operation(data),
         
         Operations::MUL => mul_operation(data),
@@ -72,18 +72,18 @@ fn compute_operation(data: i32, operation: Operations)
 ```rust
 fn add_operation(data: i32) -> Result<String, OperationsError> {
     let compute = data + 10;
-    return Ok(String::from(compute.to_string()))
+    Ok(String::from(compute.to_string()))
 }
 
 
 fn mul_operation(data: i32) -> Result<String, OperationsError> {
     let compute = data * 10;
-    return Ok(String::from(compute.to_string()))
+    Ok(String::from(compute.to_string()))
 }
 
 
 fn div_operation(data: i32) -> Result<String, OperationsError> {
-    return Err(OperationsError::OVERFLOW)
+    Err(OperationsError::OVERFLOW)
 }
 ```
 

@@ -295,16 +295,16 @@ body {
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
 i.h1 {
-  color: red; }
+  color: #fe4c4c; }
 
 i.h2 {
   color: orange; }
 
 i.h3 {
-  color: green; }
+  color: #a6e22e; }
 
 i.h4 {
-  color: #6896ba; }
+  color: #13daec; }
 
 .reveal code {
   color: #cb7832; }
@@ -320,12 +320,15 @@ i.h4 {
 
 .reveal pre code {
   max-height: 600px; }
+  .reveal pre code .strong {
+    color: #ff3232;
+    font-size: larger; }
 
 .reveal em {
   color: orange; }
 
 .reveal strong {
-  color: red; }
+  color: #ff3232; }
 
 .reveal .big {
   font-size: 175%; }

@@ -72,7 +72,7 @@ fn generate_events() {
 fn transform_events(<span class="fragment highlight-mark">events</span>: Vec<Event>) {
     // Ownership of events transfered in
     // transform_event scope 
-} <span class="fragment" style="color:red;font-size:larger;">◀️ free memory allocation events</span>
+} <span class="fragment strong">◀️ free memory allocation events</span>
 </code></pre> 
 
 

@@ -14,6 +14,59 @@ Introduction to Rust language and its ecosystem. Goal is to ease starting with R
     * memory guarantees : Box / Arc
     * macro
 * Ecosystem :
-  * IDE, tests, debugger, RLS (?)
+  * IDE, tests, debugger, RLS
   * Build et package manager (Cargo)
   * Librairies (Rayon, Rocket, Nom)
+
+## Rust installation
+
+Follows instructions available at https://www.rustup.rs/.
+
+## Cross-compilation
+
+In order to cross-compile, you need both a Rust toolchain for the target platform and a "linker" for this platform.
+
+Following instructions help in order to setup a Debian-based environment to target ARMv7.
+
+## ARMv7
+
+First, you need to install a 32-bits compiler as ARMv7 is a 32-bits architecture:
+
+```
+apt-get update && apt-get install libc6-dev-i386
+```
+
+Next, install cross-compiling tools
+
+```
+apt-get update && apt-get install gcc-arm-linux-gnueabihf
+```
+
+Then, install target to Rust toolchain
+
+```
+rustup target add armv7-unknown-linux-gnueabihf
+```
+
+Finally, specify linker Cargo should use
+
+```
+cat >>~/.cargo/config <<EOF
+[target.armv7-unknown-linux-gnueabihf]
+linker = "arm-linux-gnueabihf-gcc"
+EOF
+```
+
+In order to generate ARMv7 binaries:
+
+```
+cargo build --target armv7-unknown-linux-gnueabihf
+```
+
+Optionally, you can omit `--target` flag by adding the following section to your `~/.cargo/config`:
+
+```
+[build]
+target = "armv7-unknown-linux-gnueabihf"
+```
+

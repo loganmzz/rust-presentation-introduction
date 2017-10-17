@@ -7,8 +7,8 @@
 * 2006 : Graydon Hoare (Mozilla) - personal project
 * 2009 : Mozilla - sponsor
 * 2015-05-15 : Rust 1.0
-* 2017-08-31 : Rust 1.20
 * 2017-10-12 : Rust 1.21
+* 2017-11-23 : Rust 1.22
 
 Note:
 * Servo

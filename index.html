@@ -142,13 +142,16 @@
 				]
 			});
 
-            window.addEventListener("mousedown", handleClick, false);
-            window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+            let queryParams = new URLSearchParams(window.location.search);
 
-            function handleClick(e) {
-            	e.preventDefault();
-            	if(e.button === 0) Reveal.next();
-            	if(e.button === 2) Reveal.prev();
+            if (queryParams.has('click')) {
+                var navigateByClick = function handleClick(e) {
+                    e.preventDefault();
+                    if(e.button === 0) Reveal.next();
+                    if(e.button === 2) Reveal.prev();
+                }
+                window.addEventListener("mousedown", navigateByClick, false);
+                window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
             }
 		</script>
 	</body>

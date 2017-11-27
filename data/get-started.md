@@ -121,7 +121,7 @@ fn main() {
 ## Structures (`struct`)
 
 ```rust
-#[derive(Clone, Debug)]
+#[derive(Copy, Clone, Debug)]
 struct Data(i32, i32);
 
 struct Task {

@@ -23,9 +23,9 @@ Shipped in Firefox (start with version 48) <!-- .element: style="margin-top:5%" 
 
 ## Rust community
 
-* 11,023 crates on crates.io 
+* 12,173 crates on crates.io
 
-* 1,856 contributors
+* 1,932 contributors
 
 * [Most loved language](https://insights.stackoverflow.com/survey/2017#most-loved-dreaded-and-wanted) on Stack Overflow
 

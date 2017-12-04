@@ -31,7 +31,7 @@ Shipped in Firefox (start with version 48) <!-- .element: style="margin-top:5%" 
 
 * [18th](https://blog.sourced.tech/post/language_migrations/#most-popular-languages-on-github) most popular language on GitHub
 
-* _MKTD #5 (Go / Rust) on 24 November_ ([Meetup](https://www.meetup.com/fr-FR/Monkey-Tech-Days/events/237545492/))
+* _RustFest at Paris on Spring 2018_ ([Twitter](https://twitter.com/rustlang/status/914169823009103872/photo/1))
 
 ---
 

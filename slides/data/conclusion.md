@@ -31,7 +31,7 @@ Shipped in Firefox (start with version 48) <!-- .element: style="margin-top:5%" 
 
 * [18th](https://blog.sourced.tech/post/language_migrations/#most-popular-languages-on-github) most popular language on GitHub
 
-* _RustFest at Paris on Spring 2018_ ([Twitter](https://twitter.com/rustlang/status/914169823009103872/photo/1))
+* _RustFest Paris 2018 on May 26-27th_ (https://paris.rustfest.eu/)
 
 ---
 

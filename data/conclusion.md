@@ -23,11 +23,11 @@ Shipped in Firefox (start with version 48) <!-- .element: style="margin-top:5%" 
 
 ## Rust community
 
-* 12,173 crates on crates.io 
+* 15,292 crates on crates.io
 
-* 1,932 contributors
+* 2,059 contributors
 
-* [Most loved language](https://insights.stackoverflow.com/survey/2017#most-loved-dreaded-and-wanted) on Stack Overflow
+* [Most loved language](https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-languages) on Stack Overflow for 3rd year
 
 * [18th](https://blog.sourced.tech/post/language_migrations/#most-popular-languages-on-github) most popular language on GitHub
 

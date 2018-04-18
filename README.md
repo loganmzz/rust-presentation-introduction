@@ -70,3 +70,31 @@ Optionally, you can omit `--target` flag by adding the following section to your
 target = "armv7-unknown-linux-gnueabihf"
 ```
 
+## JavaScript (Asm.js with emscripten)
+
+First, you need to [install emscripten](http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html).
+
+_Note: don't forget to set your environment each time with: `${EMSDK_HOME}/emsdk activate latest && source ${EMSDK_HOME}/.emsdk_env.sh`_
+
+Then, install target to Rust toolchain:
+
+```
+rustup target add asmjs-unknown-emscripten
+```
+
+Next, to build your project:
+
+```
+cargo build --target asmjs-unknown-emscripten
+```
+
+Finally, execute your code in an HTML page:
+
+```
+<html>
+    <head></head>
+    <body>
+        <script type="text/javascript" src="target/asmjs-unknown-emscripten/debug/project_name.js"></script>
+    </body>
+</html>
+```
